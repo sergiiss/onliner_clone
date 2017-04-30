@@ -1,0 +1,22 @@
+<div class="post show">
+    <h3><%= @post.title %></h3>
+    <p><%= @post.body %></p>
+</div>
+
+<span class="actions"><%= link_to 'Редактировать статью', edit_post_path(@post) %></span>
+|
+<span class="actions"><%= link_to 'Удалить статью', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?'} %></span>
+
+<h1 id="discussion">Обсуждение</h1>
+
+<%= render "comment" %>
+
+<% @comments.each do |comment| %>
+  <div class="comment">
+    <h3><%= comment.name %></h3>
+    <p>
+      <%= comment.body %>
+    </p>
+    <span><%= link_to 'Удалить комментарий', [comment.post, comment], method: :delete, data: { confirm: 'Вы уверены?'} %></span>
+  </div>
+<% end %>

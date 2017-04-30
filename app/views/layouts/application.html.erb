@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyBlog</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="body">
+      <%= link_to 'Все статьи', posts_path %>
+      |
+      <%= link_to 'Новая статья', new_post_path %>
+      |
+      Сейчас <%= @time %>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>
