@@ -1,18 +1,21 @@
-<%= form_for @post do |f| %>
-  <div class="form">
-    <%= f.label :title %>
-    <%= f.text_field :title, size: "30" %>
-  </div>
+<div class="save-form">
+  <%= form_for @post do |f| %>
+    <div class="table-row">
+      <span class="table-cell name"><%= f.label :title %></span>
+      <span class="table-cell"><%= f.text_field :title, size: "30" %></span>
+    </div>
 
-  <div class="form">
-    <%= f.label :body %>
-    <%= f.text_area :body, size: "80x20" %>
-  </div>
+    <div class="table-row">
+      <span class="table-cell name"><%= f.label :body %></span>
+      <span class="table-cell"><%= f.text_area :body, size: "80x20" %></span>
+    </div>
 
-  <div class="form">
-    <%= f.submit 'Сохранить' %>
-  </div>
-<% end %>
+    <div class="table-row">
+      <span class="table-cell"></span>
+      <span class="table-cell"><%= f.submit 'Сохранить' %></span>
+    </div>
+  <% end %>
+</div>
 
 
 
