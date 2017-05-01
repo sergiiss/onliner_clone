@@ -1,5 +1,5 @@
 <div class="save-form">
-  <%= form_for([@post, @post.comments.build]) do |f| %>
+  <%= form_for([@post, Comment.new]) do |f| %>
     <div class="table-row">
       <span class="table-cell name"><%= f.label 'Имя' %></span>
       <span class="table-cell"><%= f.text_field :name %></span>
