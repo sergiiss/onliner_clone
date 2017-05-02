@@ -1,5 +1,6 @@
 <div class="save-form">
   <%= form_for([@post, Comment.new]) do |f| %>
+    <%= f.error_messages %>
     <div class="table-row">
       <span class="table-cell name"><%= f.label 'Имя' %></span>
       <span class="table-cell"><%= f.text_field :name %></span>
@@ -7,7 +8,7 @@
 
     <div class="table-row">
       <span class="table-cell name"><%= f.label 'Текст' %></span>
-      <span class="table-cell"><%= f.text_area :body, size: "60x10" %></span>
+      <span class="table-cell"><%= f.text_area :body, size: "60x10", :placeholder => 'Напишите текст комментария...'  %></span>
     </div>
 
     <div class="table-row">

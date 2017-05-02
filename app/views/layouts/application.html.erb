@@ -10,11 +10,15 @@
 
   <body>
     <div id="body">
-      <%= link_to 'Все статьи', posts_path %>
-      |
-      <%= link_to 'Новая статья', new_post_path %>
-      |
-      Сейчас <%= @time %>
+      <div id="menu">
+        <%= link_to 'Все статьи', posts_path %>
+        |
+        <%= link_to 'Новая статья', new_post_path %>
+        |
+        Сейчас <%= @time %>
+
+        <div id="input"><%= link_to 'Войти', new_user_path %></div>
+      </div>
 
       <%= yield %>
     </div>
