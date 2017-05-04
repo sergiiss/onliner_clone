@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user
+  helper_method :current_user, :time
 
   private
+
+  def time
+    @time = Time.now.to_s[11..18]
+  end
 
   def current_user
     if session[:user_id]

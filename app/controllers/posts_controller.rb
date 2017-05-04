@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @time = Time.now.to_s[11..18]
   end
 
   def new
@@ -24,7 +23,6 @@ class PostsController < ApplicationController
 
   def show
     @comments = @post.comments
-    @time = Time.now.to_s[11..18]
   end
 
   def update
