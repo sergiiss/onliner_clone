@@ -1,0 +1,22 @@
+<h3>Пожалуйста, осуществите вход</h3>
+
+<% if flash[:alert].present? %>
+  <p><%= flash[:alert] %></p>
+<% end %>
+
+<%= form_tag sessions_path do %>
+  <div class="table-row">
+    <span class="table-cell name"><%= label_tag 'Имя' %></span>
+    <span class="table-cell"><%= text_field_tag :name %></span>
+  </div>
+
+  <div class="table-row">
+    <span class="table-cell name"><%= label_tag 'Пароль' %></span>
+    <span class="table-cell"><%= password_field_tag :password %></span>
+  </div>
+
+  <div class="table-row">
+    <span class="table-cell"></span>
+    <span class="table-cell"><%= submit_tag 'Войти' %></span>
+  </div>
+<% end %>

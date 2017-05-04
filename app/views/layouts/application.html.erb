@@ -17,7 +17,14 @@
         |
         Сейчас <%= @time %>
 
-        <div id="input"><%= link_to 'Войти', new_user_path %></div>
+        <% if current_user %>
+          <div class="input">
+            <%= current_user.name %>
+            <div><%= link_to 'Выйти', sessions_destroy_path %></div>
+          </div>
+        <% else %>
+          <div class="input"><%= link_to 'Войти', new_sessions_path %></div>
+        <% end %>
       </div>
 
       <%= yield %>
