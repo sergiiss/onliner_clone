@@ -3,7 +3,7 @@
     <%= f.error_messages %>
     <div class="table-row">
       <span class="table-cell name"><%= f.label 'Имя' %></span>
-      <span class="table-cell"><%= f.text_field :name %></span>
+      <span class="table-cell"><%= f.text_field :name, :placeholder => current_user.name %></span>
     </div>
 
     <div class="table-row">

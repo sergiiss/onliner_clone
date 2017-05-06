@@ -3,7 +3,7 @@
     <p><%= @post.body %></p>
 </div>
 
-<% if User.find_by(id: session[:user_id]) %>
+<% if current_user && current_user.name == 'admin' %>
   <span class="actions"><%= link_to 'Редактировать статью', edit_post_path(@post) %></span>
   |
   <span class="actions"><%= link_to 'Удалить статью', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?'} %></span>
@@ -22,7 +22,7 @@
       <%= comment.body %>
     </p>
 
-    <% if User.find_by(id: session[:user_id]) %>
+    <% if current_user && current_user.name == 'admin' %>
       <span><%= link_to 'Удалить комментарий', [comment.post, comment], method: :delete, data: { confirm: 'Вы уверены?'} %></span>
     <% end %>
 

@@ -13,7 +13,7 @@
       <div id="menu">
         <%= link_to 'Все статьи', posts_path %>
         |
-        <% if User.find_by(id: session[:user_id]) %>
+        <% if current_user && current_user.name == 'admin' %>
           <%= link_to 'Новая статья', new_post_path %>
           |
         <% end %>

@@ -8,15 +8,21 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    if current_user.name == 'admin'
+      @post = Post.new
+    end
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      redirect_to @post
+    if current_user.name == 'admin'
+      @post = Post.new(post_params)
+      if @post.save
+        redirect_to @post
+      else
+        render :new
+      end
     else
-      render :new
+      redirect_to root_path, alert: 'У Вас нет прав, зайдите под администратором'
     end
   end
 
@@ -28,16 +34,20 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update_attributes(post_params)
-      redirect_to @post
-    else
-      render :edit
+    if current_user.name == 'admin'
+      if @post.update_attributes(post_params)
+        redirect_to @post
+      else
+        render :edit
+      end
     end
   end
 
   def destroy
-    @post.destroy
-    redirect_to posts_path
+    if current_user.name == 'admin'
+      @post.destroy
+      redirect_to posts_path
+    end
   end
 
   private
