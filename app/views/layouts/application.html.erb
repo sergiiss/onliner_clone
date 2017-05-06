@@ -13,8 +13,10 @@
       <div id="menu">
         <%= link_to 'Все статьи', posts_path %>
         |
-        <%= link_to 'Новая статья', new_post_path %>
-        |
+        <% if User.find_by(id: session[:user_id]) %>
+          <%= link_to 'Новая статья', new_post_path %>
+          |
+        <% end %>
         Сейчас <%= time %>
 
         <div class="input">

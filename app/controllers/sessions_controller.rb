@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorize
+
   def new
     current_user
   end
@@ -7,7 +9,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(name: params[:name])
 
     if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
+      session[:user_id] = @user.id if @user.name == 'admin'
       redirect_to root_path
     else
       redirect_to new_session_path, alert: 'Пароль или логин неверен'

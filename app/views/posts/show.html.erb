@@ -3,13 +3,17 @@
     <p><%= @post.body %></p>
 </div>
 
-<span class="actions"><%= link_to 'Редактировать статью', edit_post_path(@post) %></span>
-|
-<span class="actions"><%= link_to 'Удалить статью', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?'} %></span>
+<% if User.find_by(id: session[:user_id]) %>
+  <span class="actions"><%= link_to 'Редактировать статью', edit_post_path(@post) %></span>
+  |
+  <span class="actions"><%= link_to 'Удалить статью', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?'} %></span>
+<% end %>
 
 <h1 id="discussion">Обсуждение</h1>
 
-<%= render "comment" %>
+<% if User.find_by(id: session[:user_id]) %>
+  <%= render "comment" %>
+<% end %>
 
 <% @comments.each do |comment| %>
   <div class="comment">
@@ -17,6 +21,10 @@
     <p>
       <%= comment.body %>
     </p>
-    <span><%= link_to 'Удалить комментарий', [comment.post, comment], method: :delete, data: { confirm: 'Вы уверены?'} %></span>
+
+    <% if User.find_by(id: session[:user_id]) %>
+      <span><%= link_to 'Удалить комментарий', [comment.post, comment], method: :delete, data: { confirm: 'Вы уверены?'} %></span>
+    <% end %>
+
   </div>
 <% end %>

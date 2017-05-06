@@ -1,9 +1,17 @@
 class ApplicationController < ActionController::Base
+  before_action :authorize
+
   protect_from_forgery with: :exception
 
   helper_method :current_user, :time
 
   private
+
+  def authorize
+    unless User.find_by(id: session[:user_id])
+      redirect_to new_sessions_path, alert: "Пожалуйста, пройдите авторизацию"
+    end
+  end
 
   def time
     @time = Time.now.to_s[11..18]
