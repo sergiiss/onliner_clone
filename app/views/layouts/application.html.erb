@@ -16,6 +16,8 @@
         <% if current_user && current_user.name == 'admin' %>
           <%= link_to 'Новая статья', new_post_path %>
           |
+          <%= link_to 'Список пользователей', users_path %>
+          |
         <% end %>
         Сейчас <%= time %>
 

@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorize
+  skip_before_action :authenticate_user
 
   def new
     current_user
@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
+
       redirect_to root_path
     else
       redirect_to new_session_path, alert: 'Пароль или логин неверен'
@@ -18,6 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+
     redirect_to root_path
   end
 end

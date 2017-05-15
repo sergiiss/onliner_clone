@@ -15,16 +15,27 @@
   <%= render "comment" %>
 <% end %>
 
-<% @comments.each do |comment| %>
+<% @comments.sort_by do |comment| %>
   <div class="comment">
     <h3><%= comment.name %></h3>
     <p>
       <%= comment.body %>
     </p>
+    <span id="date_comment">Создан <%= comment.created_at %></span>
 
     <% if current_user && current_user.name == 'admin' %>
       <span><%= link_to 'Удалить комментарий', [comment.post, comment], method: :delete, data: { confirm: 'Вы уверены?'} %></span>
     <% end %>
 
+    <br>
+    <br>
+    <div>
+      <div class="like"><img src="/assets/<%= like_image %>" width="35" height="35"></div>
+      <div class="like like-count"><%= comment.likes.count %></div>
+
+      <% if User.find_by(id: session[:user_id]) %>
+        <div><%= button_to 'Лайк', comment_likes_path(comment), :method => :post %></div>
+      <% end %>
+    </div>
   </div>
 <% end %>

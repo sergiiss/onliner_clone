@@ -1,28 +1,24 @@
 class PostsController < ApplicationController
-  skip_before_action :authorize, only: [ :index, :show ]
+  skip_before_action :authenticate_user, only: [ :index, :show ]
 
   before_action :set_post, only: [ :edit, :show, :update, :destroy ]
+  before_action :authorize_admin, except: [ :index, :show ]
 
   def index
     @posts = Post.all
   end
 
   def new
-    if current_user.name == 'admin'
-      @post = Post.new
-    end
+    @post = Post.new
   end
 
   def create
-    if current_user.name == 'admin'
-      @post = Post.new(post_params)
-      if @post.save
-        redirect_to @post
-      else
-        render :new
-      end
+    @post = Post.new(post_params)
+
+    if @post.save
+      redirect_to @post
     else
-      redirect_to root_path, alert: 'У Вас нет прав, зайдите под администратором'
+      render :new
     end
   end
 
@@ -34,20 +30,17 @@ class PostsController < ApplicationController
   end
 
   def update
-    if current_user.name == 'admin'
-      if @post.update_attributes(post_params)
-        redirect_to @post
-      else
-        render :edit
-      end
+    if @post.update_attributes(post_params)
+      redirect_to @post
+    else
+      render :edit
     end
   end
 
   def destroy
-    if current_user.name == 'admin'
-      @post.destroy
-      redirect_to posts_path
-    end
+    @post.destroy
+
+    redirect_to posts_path
   end
 
   private
