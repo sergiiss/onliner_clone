@@ -11,6 +11,32 @@
 
 <h1 id="discussion">Обсуждение</h1>
 
+<% @max_like = 0 %>
+<% @comments.each do |comment| %>
+  <% a = comment.likes.count %>
+  <% if a > @max_like %>
+    <% @max_like = a %>
+  <% end %>
+<% end %>
+
+<div class="best-comment">
+  <% @comments.each do |comment| %>
+    <% if comment.likes.count == @max_like && comment.likes.count != 0 %>
+      <div class="comment">
+        <h3><%= comment.name %></h3>
+        <p>
+          <%= comment.body %>
+        </p>
+        <br>
+        <div>
+          <div class="like"><img src="/assets/<%= like_image %>" width="35" height="35"></div>
+          <div class="like like-count"><%= comment.likes.count %></div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
 <% if User.find_by(id: session[:user_id]) %>
   <%= render "comment" %>
 <% end %>
@@ -29,6 +55,7 @@
 
     <br>
     <br>
+
     <div>
       <div class="like"><img src="/assets/<%= like_image %>" width="35" height="35"></div>
       <div class="like like-count"><%= comment.likes.count %></div>
