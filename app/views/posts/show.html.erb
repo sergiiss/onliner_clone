@@ -11,14 +11,6 @@
 
 <h1 id="discussion">Обсуждение</h1>
 
-<% @max_like = 0 %>
-<% @comments.each do |comment| %>
-  <% a = comment.likes.count %>
-  <% if a > @max_like %>
-    <% @max_like = a %>
-  <% end %>
-<% end %>
-
 <div class="best-comment">
   <% @comments.each do |comment| %>
     <% if comment.likes.count == @max_like && comment.likes.count != 0 %>
@@ -29,7 +21,7 @@
         </p>
         <br>
         <div>
-          <div class="like"><img src="/assets/<%= like_image %>" width="35" height="35"></div>
+          <div class="like"><img src="/assets/like.png" width="35" height="35"></div>
           <div class="like like-count"><%= comment.likes.count %></div>
           <div class="like"><span>Лучший комментарий</span></div>
         </div>
@@ -53,17 +45,22 @@
     <% if current_user && current_user.name == 'admin' %>
       <span><%= link_to 'Удалить комментарий', [comment.post, comment], method: :delete, data: { confirm: 'Вы уверены?'} %></span>
     <% end %>
-
     <br>
     <br>
 
-    <div>
-      <div class="like"><img src="/assets/<%= like_image %>" width="35" height="35"></div>
-      <div class="like like-count"><%= comment.likes.count %></div>
-
-      <% if User.find_by(id: session[:user_id]) %>
-        <div><%= button_to 'Лайк', comment_likes_path(comment), :method => :post %></div>
+    <% if User.find_by(id: session[:user_id]) %>
+      <% if comment.likes.where(:user_id => current_user.id).present? %>
+        <div class="like"><img src="/assets/like-full.png" width="35" height="35"></div>
+        <div class="like like-count"><%= comment.likes.count %></div>
+        <div><%= button_to 'Лайк', comment_like_path(comment, :id), :method => :delete  %></div>
+      <% else %>
+        <div class="like"><img src="/assets/like.png" width="35" height="35"></div>
+        <div class="like like-count"><%= comment.likes.count %></div>
+        <div><%= button_to 'Лайк', comment_likes_path(comment) %></div>
       <% end %>
-    </div>
+    <% else %>
+      <div class="like"><img src="/assets/like.png" width="35" height="35"></div>
+      <div class="like like-count"><%= comment.likes.count %></div>
+    <% end %>
   </div>
 <% end %>

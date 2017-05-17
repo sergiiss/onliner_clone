@@ -6,11 +6,7 @@ class LikesController < ApplicationController
   end
 
   def create
-    if @comment.likes.where(:user_id => @current_user.id).present?
-      destroy
-    else
-      @like = @comment.likes.create(like_params.merge(:user_id => @current_user.id))
-    end
+    @like = @comment.likes.create(like_params.merge(:user_id => @current_user.id))
 
     redirect_to post_path(@comment.post)
   end
@@ -18,6 +14,8 @@ class LikesController < ApplicationController
   def destroy
     @like = @comment.likes.find_by(:user_id => @current_user.id)
     @like.destroy
+
+    redirect_to post_path(@comment.post)
   end
 
   private

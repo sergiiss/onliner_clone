@@ -27,6 +27,7 @@ class PostsController < ApplicationController
 
   def show
     @comments = @post.comments
+    max_like
   end
 
   def update
@@ -44,6 +45,21 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def max_like
+    @max_like = 0
+
+    @comments.each do |comment|
+      number_of_likes = comment.likes.count
+
+      if number_of_likes >= @max_like
+        if number_of_likes == @max_like
+          number_of_likes = 0
+        end
+        @max_like = number_of_likes
+      end
+    end
+  end
 
   def set_post
     @post = Post.find(params[:id])
