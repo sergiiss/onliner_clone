@@ -113,4 +113,13 @@ a:hover {
   margin: 50px 0px 50px 0px;
 }
 
+.like-botton {
+  vertical-align: 16px;
+  margin-left: 15px;
+  position: absolute;
+  display: none;
+}
 
+.like-all:hover .like-botton {
+  display: inline-block;
+}

@@ -50,13 +50,17 @@
 
     <% if User.find_by(id: session[:user_id]) %>
       <% if comment.likes.where(:user_id => current_user.id).present? %>
-        <div class="like"><img src="/assets/like-full.png" width="35" height="35"></div>
-        <div class="like like-count"><%= comment.likes.count %></div>
-        <div><%= button_to 'Лайк', comment_like_path(comment, :id), :method => :delete  %></div>
-      <% else %>
-        <div class="like"><img src="/assets/like.png" width="35" height="35"></div>
-        <div class="like like-count"><%= comment.likes.count %></div>
-        <div><%= button_to 'Лайк', comment_likes_path(comment) %></div>
+        <div class="like-all">
+          <div class="like"><img src="/assets/like-full.png" width="35" height="35"></div>
+          <div class="like like-count"><%= comment.likes.count %></div>
+          <div class="like-botton"><%= button_to 'Дизлайк', comment_like_path(comment, :id), :method => :delete  %></div>
+        </div>
+        <% else %>
+        <div class="like-all">
+          <div class="like"><img src="/assets/like.png" width="35" height="35"></div>
+          <div class="like like-count"><%= comment.likes.count %></div>
+          <div class="like-botton"><%= button_to 'Лайк', comment_likes_path(comment) %></div>
+        </div>
       <% end %>
     <% else %>
       <div class="like"><img src="/assets/like.png" width="35" height="35"></div>
