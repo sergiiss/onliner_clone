@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def show
     @comments = @post.comments
-    max_like
+    @best_comment = find_best_comment
   end
 
   def update
