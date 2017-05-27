@@ -6,8 +6,23 @@
   margin: 20px 0px;
 }
 
-.post.show p {
-  min-height: 600px;
+.show {
+  margin-top: 120px;
+  width: 850px;
+}
+
+.show p {
+  min-height: 100px;
+  padding: 10px 0px;
+  margin: 0px;
+  text-align: justify;
+}
+
+.show h3 {
+  margin: 0px 0px 10px 0px;
+  text-align: center;
+  min-height: 40px;
+  font-size: 1.6em;
 }
 
 .post.show {

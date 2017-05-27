@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = @post.comments
+    @comments = @post.comments.order(:created_at)
     max_like
   end
 
@@ -66,6 +66,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :summary)
+    params.require(:post).permit(:title, :body, :summary, :image)
   end
 end

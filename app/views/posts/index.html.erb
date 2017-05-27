@@ -1,9 +1,11 @@
-<h1>Список статей</h2>
+<h1 id="title-posts">Список статей</h1>
 
 <% @posts.each do |post| %>
+<div>
+  <div id="post-image"><%= image_tag post.image.url %></div>
   <div class="post">
     <h3><%= link_to post.title, post_path(post) %></h3>
-
     <p><%= post.summary %></p>
   </div>
+</div>
 <% end %>
