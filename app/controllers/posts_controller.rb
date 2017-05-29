@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def show
     @comments = @post.comments.order(:created_at)
-    get_best_comment
+    @best_comment = get_best_comment
   end
 
   def update
@@ -51,11 +51,11 @@ class PostsController < ApplicationController
 
     if @max_like_comment[1].present?
       if @max_like_comment[0].likes.count != @max_like_comment[1].likes.count
-        @best_comment = @max_like_comment[0]
+        @max_like_comment[0]
       end
     elsif @max_like_comment[0].present?
       if @max_like_comment[0].likes.count != 0
-        @best_comment = @max_like_comment[0]
+         @max_like_comment[0]
       end
     end
   end
