@@ -15,38 +15,35 @@
 <h1 id="discussion">Обсуждение</h1>
 
 <div class="best-comment">
-  <% @comments.each do |comment| %>
-    <% if comment.likes.count == @max_like && comment.likes.count != 0 %>
-      <div class="comment">
-        <h3><%= comment.name %></h3>
-        <p>
-          <%= comment.body %>
-        </p>
-        <br>
-
-        <% if current_user.present? %>
-          <% if comment.likes.where(:user_id => current_user.id).present? %>
-            <div class="like-all">
-              <div class="like"><img src="/assets/like-full.png" width="35" height="35"></div>
-              <div class="like like-count"><%= comment.likes.count %></div>
-              <div class="like-botton"><%= button_to 'Дизлайк', comment_like_path(comment, :id), :method => :delete %></div>
-              <div class="like"><span>Лучший комментарий</span></div>
-            </div>
-          <% else %>
-            <div class="like-all">
-              <div class="like"><img src="/assets/like.png" width="35" height="35"></div>
-              <div class="like like-count"><%= comment.likes.count %></div>
-              <div class="like-botton"><%= button_to 'Лайк', comment_likes_path(comment) %></div>
-              <div class="like"><span>Лучший комментарий</span></div>
-            </div>
-          <% end %>
+  <% if @best_comment.present? %>
+    <div class="comment">
+      <h3><%= @best_comment.name %></h3>
+      <p>
+        <%= @best_comment.body %>
+      </p>
+      <br>
+      <% if current_user.present? %>
+        <% if @best_comment.likes.where(:user_id => current_user.id).present? %>
+          <div class="like-all">
+            <div class="like"><img src="/assets/like-full.png" width="35" height="35"></div>
+            <div class="like like-count"><%= @best_comment.likes.count %></div>
+            <div class="like-botton"><%= button_to 'Дизлайк', comment_like_path(@best_comment, :id), :method => :delete %></div>
+            <div class="like"><span>Лучший комментарий</span></div>
+          </div>
         <% else %>
-          <div class="like"><img src="/assets/like.png" width="35" height="35"></div>
-          <div class="like like-count"><%= comment.likes.count %></div>
-          <div class="like"><span>Лучший комментарий</span></div>
+          <div class="like-all">
+            <div class="like"><img src="/assets/like.png" width="35" height="35"></div>
+            <div class="like like-count"><%= @best_comment.likes.count %></div>
+            <div class="like-botton"><%= button_to 'Лайк', comment_likes_path(@best_comment) %></div>
+            <div class="like"><span>Лучший комментарий</span></div>
+          </div>
         <% end %>
-      </div>
-    <% end %>
+      <% else %>
+        <div class="like"><img src="/assets/like.png" width="35" height="35"></div>
+        <div class="like like-count"><%= @best_comment.likes.count %></div>
+        <div class="like"><span>Лучший комментарий</span></div>
+      <% end %>
+    </div>
   <% end %>
 </div>
 
