@@ -2,7 +2,9 @@
 
 <% @posts.each do |post| %>
 <div>
-  <div id="post-image"><%= image_tag post.image.url %></div>
+  <div class="post-image">
+    <%= image_tag post.image.url, class: "rounded float-left", size: "200x160" %>
+  </div>
   <div class="post">
     <h3><%= link_to post.title, post_path(post) %></h3>
     <p><%= post.summary %></p>

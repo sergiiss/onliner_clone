@@ -1,4 +1,4 @@
-body {
+#body {
   width: 1058px;
   margin-left: auto;
   margin-right: auto;
@@ -6,50 +6,8 @@ body {
 
 #title-posts {
   text-align: center;
-}
-
-.post {
-  display: inline-block;
-  width: 850px;
-}
-
-.post h3 {
-  margin: 0px;
-  padding: 0px;
-  border-bottom: 1px solid #111111;
-  background-color: #eeeeee;
-  text-align: center;
-  min-height: 40px;
-  line-height: 50px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.post p {
-  min-height: 120px;
-  padding: 10px;
-  background-color: rgb(246, 240, 248);
-  margin: 0px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  text-align: justify;
-}
-
-#post-image {
-  display: inline-block;
-  padding-right: 20px;
-}
-
-#post-image img {
-  max-height: 120px;
-  max-width: 120px;
-  vertical-align: 60px;
-}
-
-#show-image img {
-  text-align: center;
-  margin: 10px 10px;
-  max-width: 800px;
+  margin-top: 15px;
+  font-size: 2.2em;
 }
 
 a {
@@ -122,12 +80,12 @@ a:hover {
 .like span {
   color: red;
   font-size: 0.9em;
-  vertical-align: 17px;
-  padding-left: 110px;
+  vertical-align: 7px;
+  padding-left: 140px;
 }
 
 .like-count {
-  vertical-align: 16px;
+  vertical-align: 3px;
 }
 
 #date_comment {

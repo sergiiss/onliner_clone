@@ -1,6 +1,8 @@
 <div class="show">
     <h3><%= @post.title %></h3>
-    <div id="show-image"><%= image_tag @post.image.url %></div>
+    <div id="show-image">
+      <%= image_tag @post.image.url %>
+    </div>
     <p><%= @post.body %></p>
 </div>
 

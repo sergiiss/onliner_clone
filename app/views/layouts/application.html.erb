@@ -3,24 +3,26 @@
   <head>
     <title>MyBlog</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div id="body">
-      <div id="menu">
-        <%= link_to 'Все статьи', posts_path %>
-        |
-        <% if current_user && current_user.name == 'admin' %>
-          <%= link_to 'Новая статья', new_post_path %>
-          |
-          <%= link_to 'Список пользователей', users_path %>
-          |
-        <% end %>
-        Сейчас <%= time %>
-
+  <body id="body">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <%= link_to 'Все статьи', posts_path, class: "nav-link" %>
+          </li>
+          <% if current_user && current_user.name == 'admin' %>
+            <li class="nav-item">
+              <%= link_to 'Новая статья', new_post_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Список пользователей', users_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
         <div class="input">
           <% if current_user %>
             <div class="user-name"><%= current_user.name %></div>
@@ -30,8 +32,9 @@
           <% end %>
         </div>
       </div>
+    </nav>
 
-      <%= yield %>
-    </div>
+    <%= yield %>
+
   </body>
 </html>
