@@ -1,5 +1,5 @@
 <div class="save-form">
-  <%= form_for([@post, Comment.new]) do |f| %>
+  <%= form_for([post, Comment.new]) do |f| %>
     <%= f.error_messages %>
     <div class="table-row">
       <span class="table-cell name"><%= f.label 'Имя' %></span>

@@ -48,7 +48,7 @@
 </div>
 
 <% if User.find_by(id: session[:user_id]) %>
-  <%= render "comment_form" %>
+  <%= render partial: "comment_form", locals: { post: @post } %>
 <% end %>
 
-<%= render "comments" %>
+<%= render @comments %>
