@@ -3,4 +3,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   has_secure_password
+
+  def admin?
+    name == "admin"
+  end
 end
