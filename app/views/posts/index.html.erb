@@ -3,7 +3,7 @@
 <% @posts.each do |post| %>
 <div>
   <div class="post-image">
-    <%= image_tag post.image.url, class: "rounded float-left", size: "200x160" %>
+    <%= link_to((image_tag post.image.url, class: "rounded float-left", size: "200x160"), post.image.url, target: "_blank") %>
   </div>
   <div class="post">
     <h3><%= link_to post.title, post_path(post) %></h3>
