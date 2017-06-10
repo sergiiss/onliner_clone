@@ -1,9 +1,3 @@
-#body {
-  width: 1058px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 #title-posts {
   text-align: center;
   margin-top: 25px;
@@ -105,4 +99,8 @@ a:hover {
 
 .like-all:hover .like-botton {
   display: inline-block;
+}
+
+.nav-link {
+  font-size: 1.2em;
 }

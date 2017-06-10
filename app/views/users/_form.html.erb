@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <fieldset id="registration">
+  <fieldset>
     <legend>Введите сведения о пользователе</legend>
 
-      <div class="table-row">
-        <span class="table-cell name"><%= f.label 'Имя' %></span>
-        <span class="table-cell"><%= f.text_field :name %></span>
-      </div>
+    <div class="table-row">
+      <span class="table-cell name"><%= f.label 'Имя' %></span>
+      <span class="table-cell"><%= f.text_field :name %></span>
+    </div>
 
-      <div class="table-row">
-        <span class="table-cell name"><%= f.label 'Пароль' %></span>
-        <span class="table-cell"><%= f.password_field :password %></span>
-      </div>
+    <div class="table-row">
+      <span class="table-cell name"><%= f.label 'Пароль' %></span>
+      <span class="table-cell"><%= f.password_field :password %></span>
+    </div>
 
-      <div class="table-row">
-        <span class="table-cell name"><%= f.label 'Подтвердить пароль' %></span>
-        <span class="table-cell"><%= f.password_field :password_confirmation %></span>
-      </div>
+    <div class="table-row">
+      <span class="table-cell name"><%= f.label 'Подтвердить пароль' %></span>
+      <span class="table-cell"><%= f.password_field :password_confirmation %></span>
+    </div>
 
-      <div class="table-row">
-        <span class="table-cell name"></span>
-        <span class="table-cell"><%= f.submit 'Создать пользователя' %></span>
-      </div>
-    </fieldset>
+    <div class="table-row">
+      <span class="table-cell name"></span>
+      <span class="table-cell"><%= f.submit 'Создать пользователя' %></span>
+    </div>
+  </fieldset>
 <% end %>

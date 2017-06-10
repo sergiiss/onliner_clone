@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.post {
-  margin: 20px 0px;
-}
-
 .show {
   margin-top: 60px;
   width: 850px;
@@ -37,7 +33,8 @@
 
 .post {
   display: inline-block;
-  width: 840px;
+  margin: 20px 0px;
+  width: 895px;
 }
 
 .post h3 {
@@ -66,9 +63,6 @@
 .post-image {
   display: inline-block;
   padding-right: 10px;
+  margin-top: 25px;
+  vertical-align: top;
 }
-
-.post-image img {
-  vertical-align: super;
-}
-
