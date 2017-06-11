@@ -6,18 +6,27 @@
 .input {
   display: inline-block;
   float: right;
-  height: 50px;
-  width: 100px;
+  height: 70px;
+  width: 230px;
   text-align: left;
-  margin-top: 8px;
+  margin-top: 5px;
+}
+
+.input-button {
+  line-height: 60px;
+  font-size: 0.9em;
+  padding-left: 70px;
+}
+
+.user {
+  display: inline-block;
+}
+
+.avatar {
+  margin-right: 20px;
 }
 
 .user-name {
-  font-size: 1.1em;
-  font-weight: lighter;
-}
-
-.input-or-output {
-  line-height: 30px;
-  font-size: 0.9em;
+  float: right;
+  min-width: 60px;
 }

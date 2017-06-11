@@ -3,7 +3,7 @@
 <br>
 
 <% if flash[:alert].present? %>
-  <p><%= flash[:alert] %></p>
+  <p class="alert alert-danger"><%= flash[:alert] %></p>
 <% end %>
 
 <%= form_tag sessions_path do %>

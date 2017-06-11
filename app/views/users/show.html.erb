@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<% if @user.avatar %>
+  <%= image_tag "avatar/avatar#{ current_user.name }.png", size: "90x68" %>
+<% end %>
 
 <p>
   <strong>Name:</strong>
@@ -6,4 +9,4 @@
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', :back %>

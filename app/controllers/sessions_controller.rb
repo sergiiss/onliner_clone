@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
       redirect_to root_path
     else
-      redirect_to new_session_path, alert: 'Пароль или логин неверен'
+      redirect_to new_sessions_path, alert: "Пароль или логин неверен"
     end
   end
 

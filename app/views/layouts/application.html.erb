@@ -25,10 +25,21 @@
         </ul>
         <div class="input">
           <% if current_user %>
-            <div class="user-name"><%= current_user.name %></div>
-            <div class="input-or-output"><%= link_to 'Выйти', sessions_destroy_path %></div>
+            <div class="user avatar">
+              <% if current_user.avatar %>
+                <%= link_to((image_tag "avatar/avatar#{ current_user.name }.png", size: "90x68"), users_path) %>
+              <% else %>
+                <%= link_to((image_tag "avatar/images.png", size: "90x68"), users_path) %>
+              <% end %>
+            </div>
+
+            <div class="user user-name"><%= current_user.name %>
+              <div class="output"><%= link_to 'Выйти', sessions_destroy_path %></div>
           <% else %>
-            <div class="input-or-output"><%= link_to 'Войти', new_sessions_path, class: 'btn btn-outline-success' %></div>
+              <div class="input-button">
+                <%= link_to 'Войти', new_sessions_path, class: 'btn btn-outline-success' %>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>
