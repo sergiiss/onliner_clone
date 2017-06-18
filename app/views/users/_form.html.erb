@@ -14,12 +14,17 @@
   <fieldset>
     <legend>Введите сведения о пользователе</legend>
 
+    <% if flash[:alert].present? %>
+      <p class="alert alert-danger"><%= flash[:alert] %></p>
+    <% end %>
+
     <div class="table-row">
       <span class="table-cell name"><%= f.label 'Имя' %></span>
       <span class="table-cell"><%= f.text_field :name %></span>
     </div>
 
     <div class="table-row">
+      <span class="table-cell name"><%= f.label 'Аватар' %></span>
       <span class="table-cell"><%= f.file_field :avatar, accept: "image/png" %></span>
     </div>
 

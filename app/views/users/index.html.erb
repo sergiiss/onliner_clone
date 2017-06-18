@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% if flash[:alert].present? %>
+  <p class="alert alert-success"><%= flash[:alert] %></p>
+<% end %>
 
 <h1>Users</h1>
 

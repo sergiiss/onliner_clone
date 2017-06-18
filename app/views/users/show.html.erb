@@ -1,6 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% if flash[:notice].present? %>
+  <p class="alert alert-success"><%= flash[:notice] %></p>
+<% end %>
+
 <% if @user.avatar %>
-  <%= image_tag "avatar/avatar#{ current_user.name }.png", size: "90x68" %>
+  <%= image_tag "avatar/avatar#{ @user.name }.png", size: "90x68" %>
 <% end %>
 
 <p>

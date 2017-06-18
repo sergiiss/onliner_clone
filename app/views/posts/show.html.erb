@@ -14,11 +14,11 @@
 
 <h1 id="discussion">Обсуждение</h1>
 
-<div class="best-comment">
   <% if @best_comment.present? %>
-    <%= render partial: 'comments/comment', object: @best_comment, locals: { best_comment: true } %>
+    <div class="best-comment">
+      <%= render partial: 'comments/comment', object: @best_comment, locals: { best_comment: true } %>
+    </div>
   <% end %>
-</div>
 
 <% if User.find_by(id: session[:user_id]) %>
   <%= render partial: "comment_form", locals: { post: @post } %>
