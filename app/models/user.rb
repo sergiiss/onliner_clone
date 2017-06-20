@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_secure_password
 
   def create_avatar(avatar_file)
-    path = File.join(public_path, 'avatars', self.id.to_s)
+    path = File.join(Rails.public_path, 'avatars', self.id.to_s)
     
     FileUtils.mkdir_p(path) unless File.exist?(path)
     
