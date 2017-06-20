@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def user_input_to_session
+    session[:user_id] = @user.id
+  end
+
   def authenticate_user
     redirect_to new_sessions_path, alert: "Пожалуйста, пройдите аутентификацию" unless current_user
   end

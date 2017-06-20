@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     end
 
     if @user.save
+      user_input_to_session
       redirect_to @user, notice: 'Пользователь был успешно создан.'
     else
       redirect_to new_user_path, alert: 'Пароль или логин неверен'
