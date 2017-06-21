@@ -1,7 +1,7 @@
 #title-posts {
-  text-align: center;
-  margin-top: 25px;
-  font-size: 2.2em;
+  margin: 95px 0px 75px 0px;
+  font-size: 2.1em;
+  color: #0275d8;
 }
 
 a {
@@ -48,11 +48,12 @@ a:hover {
   color: red;
   font-size: 0.9em;
   vertical-align: 7px;
-  padding-left: 140px;
+  background-color: yellow;
 }
 
 .like-count {
   vertical-align: 3px;
+  padding-left: 7px;
 }
 
 #date_comment {
@@ -77,4 +78,33 @@ a:hover {
 .btn-primary {
   margin-top: 4px;
   background-color: red;
+}
+
+.carousel-item {
+  a {
+  display: block;
+    img {
+      max-height: 395px;
+    }
+  }
+}
+
+.carousel-item:hover {
+  background-color: #51648e;
+}
+
+.carousel-item p {
+  color: white;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 1.4em;
+  padding: 10px;
+}
+
+.carousel-item span {
+  color: white;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 0.8em;
+  padding: 10px;
 }

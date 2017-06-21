@@ -30,39 +30,3 @@
 #new-post {
   margin-top: 40px;
 }
-
-.post {
-  display: inline-block;
-  margin: 20px 0px;
-  width: 895px;
-}
-
-.post h3 {
-  margin: 0px;
-  padding: 0px;
-  border-bottom: 1px solid #111111;
-  background-color: #eeeeee;
-  text-align: center;
-  min-height: 40px;
-  line-height: 50px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  font-size: 1.4em;
-}
-
-.post p {
-  min-height: 160px;
-  padding: 10px;
-  background-color: rgb(252, 255, 256);
-  margin: 0px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  text-align: justify;
-}
-
-.post-image {
-  display: inline-block;
-  padding-right: 10px;
-  margin-top: 25px;
-  vertical-align: top;
-}
