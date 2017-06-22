@@ -7,11 +7,13 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  def create_avatar_for_user(object, attributes)
-    path = File.join Rails.root, 'app', 'assets', 'images', object.id.to_s, 'avatar'
+  def create_avatar(avatar_file)
+    path = File.join(Rails.public_path, 'avatars', self.id.to_s)
+    
     FileUtils.mkdir_p(path) unless File.exist?(path)
-    File.open(File.join(path, "avatar#{object.name}.png"), 'wb') do |file|
-      file.puts attributes.read
+    
+    File.open(File.join(path, "avatar_#{self.name}.png"), 'wb') do |file|
+      file.puts(avatar_file.read)
     end
   end
 
