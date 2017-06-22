@@ -18,10 +18,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params.except(:avatar))
 
-    if @user.avatar
-      @user.create_avatar_for_user(@user, params[:user][:avatar])
+    if params[:user][:avatar]
+      @user.create_avatar(user_params[:avatar])
+      @user.update_attributes(avatar: "avatar#{@user.name}.png")
     end
 
     if @user.save
