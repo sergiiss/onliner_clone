@@ -18,11 +18,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params.except(:avatar))
 
-    if @user.avatar
-      @user.create_avatar_for_user(@user, params[:user][:avatar])
-    end
+    @user.create_avatar(user_params[:avatar])
 
     if @user.save
       user_input_to_session
