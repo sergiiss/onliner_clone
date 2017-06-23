@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
     FileUtils.mkdir_p(path) unless File.exist?(path)
 
-    File.open(File.join(path, "avatar#{self.name}.png"), 'wb') do |file|
+    File.open(File.join(path, "avatar#{self.id}.png"), 'wb') do |file|
       file.puts avatar_file.read
     end
   end

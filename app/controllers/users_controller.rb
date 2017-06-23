@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user, only: [ :new, :create, :show ]
 
+  before_action :authorize_admin, only: [:index, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -20,13 +21,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params.except(:avatar))
 
-    if params[:user][:avatar]
-      @user.create_avatar(user_params[:avatar])
-      @user.update_attributes(avatar: "avatar#{@user.name}.png")
-    end
-
     if @user.save
+      if params[:user][:avatar]
+        @user.create_avatar(user_params[:avatar])
+
+        @user.update_attributes(avatar: "avatar#{@user.id}.png")
+      end
+
       user_input_to_session
+
       redirect_to @user, notice: 'Пользователь был успешно создан.'
     else
       redirect_to new_user_path, alert: 'Пароль или логин неверен'
@@ -36,6 +39,11 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
+        if params[:user][:avatar]
+          @user.create_avatar(user_params[:avatar])
+
+          @user.update_attributes(avatar: "avatar#{@user.id}.png")
+        end
         format.html { redirect_to @user, alert: 'Данные пользователя были успешно обновлены.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -56,9 +64,8 @@ class UsersController < ApplicationController
   private
 
     def set_user
-      @user = User.find(params[:id])
+      @user = current_user
     end
-
 
     def user_params
       params.require(:user).permit(:name, :password, :password_confirmation, :avatar, :id)

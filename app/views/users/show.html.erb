@@ -3,7 +3,7 @@
 <% end %>
 
 <% if @user.avatar %>
-  <%= image_tag "/avatars/avatar#{ @user.name }.png", width: "76" %>
+  <%= image_tag "/avatars/#{@user.id}/avatar#{ @user.id }.png", width: "76" %>
 <% end %>
 
 <p>

@@ -1,24 +1,16 @@
-# README
+# In this project I have studied and implemented:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. The project is created as a blog;
+2. Implemented by:
+  * the ability to create articles;
+  * possibility of user registration;
+  * the user can change his name and avatar;
+  * only the supervisor can create, delete, modify articles;
+  * comments on each article;
+  * like`s for each comment;
+  * you can create or delete the same as when you click on the icon for a like or press on a button;
+  * best comment on the article;
+  * sort comments by creation time;
+  * adding photos to the post via gem Paperclip;
+  * adding an avatar from the user without Paperclip;
+3. When designing the project was used gem 'Bootstrap'.
