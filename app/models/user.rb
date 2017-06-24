@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :likes
+  has_many :comments
 
   validates :name, presence: true, uniqueness: true
   validates :password, :length => {:in => 4..15}
