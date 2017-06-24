@@ -22,8 +22,9 @@ a:hover {
 }
 
 .save-form {
-  display: table;
-  margin-bottom: 50px;
+  padding: 20px 0px 20px 10px;
+  margin-bottom: 40px;
+  background-color: #f4f6f9;
 }
 .table-row {
   display: table-row;
@@ -47,7 +48,7 @@ a:hover {
 .like span {
   color: red;
   font-size: 0.9em;
-  vertical-align: 7px;
+  margin-left: 100px;
 }
 
 .like-count {
@@ -55,14 +56,16 @@ a:hover {
 }
 
 #date_comment {
-  font-size: 0.7em;
+  padding-left: 12px;
+  color: #c3c5c9;
+  display: inline-block;
 }
 
 .like-botton {
-  vertical-align: 16px;
   margin-left: 15px;
   position: absolute;
   display: none;
+  background-color: yellow;
 }
 
 .like-all:hover .like-botton {
