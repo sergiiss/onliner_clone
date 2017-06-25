@@ -2,13 +2,14 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user, only: [ :new, :create, :show ]
 
   before_action :authorize_admin, only: [:index, :destroy]
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def new

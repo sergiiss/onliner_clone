@@ -1,15 +1,21 @@
-<% if flash[:notice].present? %>
-  <p class="alert alert-success"><%= flash[:notice] %></p>
-<% end %>
+<div class="show-user">
+  <% if flash[:notice].present? %>
+    <p class="alert alert-success"><%= flash[:notice] %></p>
+  <% end %>
 
-<% if @user.avatar %>
-  <%= image_tag "/avatars/#{@user.id}/avatar#{ @user.id }.png", width: "76" %>
-<% end %>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', :back %>
+  <% if @user.avatar %>
+    <%= image_tag "/avatars/#{@user.id}/avatar#{ @user.id }.png", width: "76" %>
+  <% end %>
+  <div class="user-data">
+    <strong>Имя:</strong>
+    <%= @user.name %>
+  </div>
+  <div class="user-data">
+    <strong>Дата регистрации:</strong>
+    <%= @user.created_at.strftime("%F") %>
+  </div>
+  <% if @user == current_user %>
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+  <% end %>
+  <%= link_to 'Back', :back %>
+</div>

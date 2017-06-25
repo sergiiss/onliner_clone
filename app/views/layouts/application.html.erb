@@ -29,7 +29,7 @@
               <% if current_user.avatar %>
                 <%= link_to((image_tag "/avatars/#{current_user.id}/avatar#{ current_user.id }.png", width: '45'), user_path(current_user.id)) %>
               <% else %>
-                <%= link_to((image_tag 'images.png', width: '45'), users_path) %>
+                <%= link_to((image_tag 'images.png', width: '45'), user_path(current_user.id)) %>
               <% end %>
             </div>
 

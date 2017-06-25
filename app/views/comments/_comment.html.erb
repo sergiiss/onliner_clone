@@ -1,40 +1,49 @@
 <div class="comment">
-  <h3><%= comment.name %></h3>
-  <div id="date_comment"><%= comment.created_at.strftime("%F в %H:%M") %></div>
-  <p>
-    <%= comment.body %>
-  </p>
-
-  <% if current_user.present? %>
-    <% if comment.from?(current_user) %>
-      <div class="like-all">
-        <div class="like">
-          <%= link_to(image_tag("/assets/like.png", width: "24"), comment_like_path(comment, :id), method: :delete) %>
-          <%= comment.likes.count %>
-        </div>
-        <div class="like-botton"><%= button_to 'Дизлайк', comment_like_path(comment, :id), :method => :delete %></div>
-        <% if best_comment %>
-          <div class="like"><span>Лучший комментарий</span></div>
-        <% end %>
-      </div>
-      <% else %>
-      <div class="like-all">
-        <div class="like">
-          <%= link_to(image_tag("/assets/like.png", width: "24"), comment_likes_path(comment), method: :post) %>
-          <%= comment.likes.count %>
-        </div>
-        <div class="like-botton"><%= button_to 'Лайк', comment_likes_path(comment) %></div>
-        <% if best_comment %>
-          <div class="like"><span>Лучший комментарий</span></div>
-        <% end %>
-      </div>
+  <div class="avatar-comment">
+    <% if User.find(comment.user_id).avatar %>
+      <%= link_to((image_tag "/avatars/#{comment.user_id}/avatar#{comment.user_id}.png"), user_path(comment.user_id)) %>
+    <% else %>
+      <%= link_to((image_tag 'images.png'), user_path(comment.user_id)) %>
     <% end %>
-  <% else %>
-    <div class="like"><img src="/assets/like.png" width="24"></div>
-    <div class="like like-count"><%= comment.likes.count %></div>
-  <% end %>
+  </div>
+  <div class="save-text-comment">
+    <h3><%= comment.name %></h3>
+    <div id="date_comment"><%= comment.created_at.strftime("%F в %H:%M") %></div>
+    <p>
+      <%= comment.body %>
+    </p>
 
-  <% if current_user && current_user.admin? %>
-    <span><%= link_to 'Удалить комментарий', [comment.post, comment], method: :delete, data: { confirm: 'Вы уверены?'} %></span>
-  <% end %>
+    <% if current_user.present? %>
+      <% if comment.from?(current_user) %>
+        <div class="like-all">
+          <div class="like">
+            <%= link_to(image_tag("/assets/like.png", width: "24"), comment_like_path(comment, :id), method: :delete) %>
+            <%= comment.likes.count %>
+          </div>
+          <div class="like-botton"><%= button_to 'Дизлайк', comment_like_path(comment, :id), :method => :delete %></div>
+          <% if best_comment %>
+            <div class="like"><span>Лучший комментарий</span></div>
+          <% end %>
+        </div>
+        <% else %>
+        <div class="like-all">
+          <div class="like">
+            <%= link_to(image_tag("/assets/like.png", width: "24"), comment_likes_path(comment), method: :post) %>
+            <%= comment.likes.count %>
+          </div>
+          <div class="like-botton"><%= button_to 'Лайк', comment_likes_path(comment) %></div>
+          <% if best_comment %>
+            <div class="like"><span>Лучший комментарий</span></div>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="like"><img src="/assets/like.png" width="24"></div>
+      <div class="like like-count"><%= comment.likes.count %></div>
+    <% end %>
+
+    <% if current_user && current_user.admin? %>
+      <span><%= link_to 'Удалить комментарий', [comment.post, comment], method: :delete, data: { confirm: 'Вы уверены?'} %></span>
+    <% end %>
+  </div>
 </div>
