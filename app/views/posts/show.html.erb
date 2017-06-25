@@ -3,7 +3,7 @@
     <div id="show-image">
       <%= image_tag @post.image.url %>
     </div>
-    <p><%= @post.body %></p>
+    <div class="text-post"><%= @post.body %></div>
 </div>
 
 <% if current_user && current_user.name == 'admin' %>

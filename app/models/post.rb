@@ -3,7 +3,9 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
 
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" },
+    default_url: "/images/:style/missing.png", size: { less_than: 1.megabyte },
+    url: "/system/:hash.:extension", hash_secret: "longSecretsString"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def best_comment
