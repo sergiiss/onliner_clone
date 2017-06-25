@@ -14,4 +14,5 @@
     * sort comments by creation time;
     * adding photos to the post via gem Paperclip;
     * adding an avatar from the user without Paperclip;
+    * adding an avatar from the each comment;
 3. When designing the project was used gem 'Bootstrap'.
