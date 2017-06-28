@@ -17,29 +17,35 @@
       <% if comment.from?(current_user) %>
         <div class="like-all">
           <div class="like">
-            <%= link_to(image_tag("like.png", width: "24"), comment_like_path(comment, :id), method: :delete) %>
+            <%= link_to(image_tag("like.png", width: '21'), comment_like_path(comment, :id), method: :delete) %>
             <%= comment.likes.count %>
           </div>
           <div class="like-botton"><%= button_to 'Дизлайк', comment_like_path(comment, :id), :method => :delete %></div>
+
           <% if best_comment %>
-            <div class="like"><span>Лучший комментарий</span></div>
+            <div class="like-best"><span>Лучший комментарий</span></div>
           <% end %>
+
         </div>
-        <% else %>
+      <% else %>
         <div class="like-all">
           <div class="like">
-            <%= link_to(image_tag("like.png", width: "24"), comment_likes_path(comment), method: :post) %>
+            <%= link_to(image_tag("like.png", width: '21'), comment_likes_path(comment), method: :post) %>
             <%= comment.likes.count %>
           </div>
           <div class="like-botton"><%= button_to 'Лайк', comment_likes_path(comment) %></div>
+
           <% if best_comment %>
-            <div class="like"><span>Лучший комментарий</span></div>
+            <div class="like-best"><span>Лучший комментарий</span></div>
           <% end %>
+
         </div>
       <% end %>
     <% else %>
-      <div class="like"><img src="like.png" width="24"></div>
-      <div class="like like-count"><%= comment.likes.count %></div>
+      <div class="like">
+        <%= image_tag("like.png", width: '21') %>
+        <%= comment.likes.count %>
+      </div>
     <% end %>
 
     <% if current_user && current_user.admin? %>

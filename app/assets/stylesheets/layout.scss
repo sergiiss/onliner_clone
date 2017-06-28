@@ -40,37 +40,6 @@ a:hover {
   font-size: 0.9em;
 }
 
-.like {
-  display: inline-block;
-}
-
-.like span {
-  color: red;
-  font-size: 0.9em;
-  margin-left: 100px;
-}
-
-.like-count {
-  padding-left: 7px;
-}
-
-#date_comment {
-  padding-left: 12px;
-  color: #c3c5c9;
-  display: inline-block;
-}
-
-.like-botton {
-  margin-left: 15px;
-  position: absolute;
-  display: none;
-  background-color: yellow;
-}
-
-.like-all:hover .like-botton {
-  display: inline-block;
-}
-
 .nav-link {
   font-size: 1.2em;
 }
