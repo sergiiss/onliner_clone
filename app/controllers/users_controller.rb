@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user, only: [ :new, :create, :show ]
 
   before_action :authorize_admin, only: [:index, :destroy]
-  before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -29,7 +28,7 @@ class UsersController < ApplicationController
         @user.update_attributes(avatar: "avatar#{@user.id}.png")
       end
 
-      user_input_to_session
+      login(@user)
 
       redirect_to @user, notice: 'Пользователь был успешно создан.'
     else
@@ -39,23 +38,23 @@ class UsersController < ApplicationController
 
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if current_user.update(user_params)
         if params[:user][:avatar]
-          @user.create_avatar(user_params[:avatar])
+          current_user.create_avatar(user_params[:avatar])
 
-          @user.update_attributes(avatar: "avatar#{@user.id}.png")
+          current_user.update_attributes(avatar: "avatar#{@user.id}.png")
         end
-        format.html { redirect_to @user, alert: 'Данные пользователя были успешно обновлены.' }
-        format.json { render :show, status: :ok, location: @user }
+        format.html { redirect_to current_user, alert: 'Данные пользователя были успешно обновлены.' }
+        format.json { render :show, status: :ok, location: current_user }
       else
         format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: current_user.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    if current_user.name == 'admin'
+    if current_user.admin?
       @user.destroy
 
       redirect_to users_url, alert: 'Пользователя был успешно удален.'
@@ -63,10 +62,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-    def set_user
-      @user = current_user
-    end
 
     def user_params
       params.require(:user).permit(:name, :password, :password_confirmation, :avatar, :id)
