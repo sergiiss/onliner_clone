@@ -22,7 +22,9 @@ a:hover {
 }
 
 #discussion {
-  margin: 60px 0px;
+  margin: 50px 0px 30px 19px;
+  font-variant: small-caps;
+  font-weight: bolder;
 }
 
 .table-row {
@@ -50,6 +52,7 @@ a:hover {
 }
 
 .carousel-item {
+  background-color: #51648e;
   a {
   display: block;
     img {
@@ -58,26 +61,36 @@ a:hover {
   }
 }
 
-.carousel-item:hover {
-  background-color: #51648e;
-}
-
-.carousel-item p {
-  color: white;
-  font-weight: bold;
-  font-variant: small-caps;
-  font-size: 1.4em;
-  padding: 10px;
+.carousel-item p, span {
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 1.4em;
+    padding: 10px;
+  }
 }
 
 .carousel-item span {
-  color: white;
-  font-weight: bold;
-  font-variant: small-caps;
-  font-size: 0.8em;
-  padding: 10px;
+  a {
+    font-size: 0.9em;
+  }
 }
 
 .button-form {
   margin-top: 5px;
+}
+
+.post-two {
+  margin-top: 40px;
+}
+
+.block {
+  margin: 5px;
+  display: inline-block;
+  img {
+  width: 355px;
+  height: 310px;
+  }
 }

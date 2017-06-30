@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user, only: [ :new, :create, :show ]
 
   before_action :authorize_admin, only: [:index, :destroy]
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update]
 
   def index
     @users = User.all
@@ -55,6 +55,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:id])
     if current_user.name == 'admin'
       @user.destroy
 

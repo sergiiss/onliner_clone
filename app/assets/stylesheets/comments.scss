@@ -3,8 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .comment {
-  margin-top: 15px;
-  margin-bottom: 40px;
+  margin: 15px 0px;
   padding: 20px 0px;
 }
 
@@ -18,7 +17,7 @@
 }
 
 .best-comment {
-  margin: 50px 0px 70px 0px;
+  margin: 0px 0px 50px 0px;
 }
 
 .avatar-comment {
@@ -74,6 +73,13 @@
   margin-left: 12px;
   position: absolute;
   display: none;
+  input {
+    height: 26px;
+    background-color: red;
+    color: white;
+    border-color: red;
+    font-size: 14px;
+  }
 }
 
 .like-all:hover .like-botton {
