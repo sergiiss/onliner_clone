@@ -5,12 +5,14 @@
   <div class="carousel-inner" role="listbox">
     <% default = "active" %>
     <% @posts.each do |post| %>
-      <div class="carousel-item <%= default %>">
-        <% default = nil %>
-        <%= link_to((image_tag post.image.url), post_path(post)) %>
-        <p><%= link_to(post.title, post_path(post)) %></p>
-        <span><%= link_to(post.summary, post_path(post)) %></span>
-      </div>
+      <% if post[:rank] == 1 %>
+        <div class="carousel-item <%= default %>">
+          <% default = nil %>
+          <%= link_to((image_tag post.image.url), post_path(post)) %>
+          <p><%= link_to(post.title, post_path(post)) %></p>
+          <span><%= link_to(post.summary, post_path(post)) %></span>
+        </div>
+      <% end %>
     <% end %>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -25,8 +27,10 @@
 
 <div class="post-two">
   <% @posts.each do |post| %>
+    <% if post[:rank] == 2 %>
       <div class="block">
         <%= link_to((image_tag post.image.url), post_path(post)) %>
       </div>
     <% end %>
+  <% end %>
 </div>

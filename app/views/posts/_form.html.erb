@@ -7,6 +7,11 @@
     </div>
 
     <div class="table-row" >
+      <span class="table-cell name"><%= f.label :rank %></span>
+      <span class="table-cell"><%= f.select :rank, (1..4) %></span>
+    </div>
+
+    <div class="table-row" >
       <span class="table-cell name"><%= f.label :image %></span>
       <span class="table-cell"><%= f.file_field :image %></span>
     </div>
