@@ -25,22 +25,28 @@
   </a>
 </div>
 
-<div class="post-two">
-  <% @posts.each do |post| %>
-    <% if post[:rank] == 2 %>
-      <div class="block">
-        <%= link_to((image_tag post.image.url), post_path(post)) %>
-      </div>
+<div class="between-groups">
+  <ul class="rank2">
+    <% @posts.each do |post| %>
+      <% if post[:rank] == 2 %>
+        <li class="block">
+          <%= link_to((image_tag post.image.url), post_path(post)) %>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
+        <li class="helper"></li>
+  </ul>
 </div>
 
-<div class="post-three">
-  <% @posts.each do |post| %>
-    <% if post[:rank] == 3 %>
-      <div class="block-three">
-        <%= link_to((image_tag post.image.url), post_path(post)) %>
-      </div>
+<div class="between-groups">
+  <ul class="rank3">
+    <% @posts.each do |post| %>
+      <% if post[:rank] == 3 %>
+        <li class="rank3-li">
+          <%= link_to((image_tag post.image.url), post_path(post)) %>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
+        <li class="helper"></li>
+  </ul>
 </div>
