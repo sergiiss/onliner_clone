@@ -38,6 +38,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def list
+    @posts = Post.all
+  end
+
   def destroy
     @post.destroy
 

@@ -6,13 +6,14 @@
     <div class="text-post"><%= @post.body %></div>
 </div>
 
-<% if current_user && current_user.name == 'admin' %>
+<% if current_user && current_user.admin? %>
   <span class="actions"><%= link_to 'Редактировать статью', edit_post_path(@post) %></span>
   |
   <span class="actions"><%= link_to 'Удалить статью', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?'} %></span>
 <% end %>
-
-<h1 id="discussion">Обсуждение</h1>
+<% if current_user.present? %>
+  <h1 id="discussion">Обсуждение</h1>
+<% end %>
 
 <% if @best_comment.present? %>
   <div class="best-comment">

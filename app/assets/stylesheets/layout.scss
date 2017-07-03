@@ -3,7 +3,7 @@
 }
 
 #title-posts {
-  margin: 55px 0px 55px 0px;
+  margin: 40px 0px;
   font-size: 2.1em;
   color: #0275d8;
 }
@@ -19,10 +19,13 @@ a:hover {
 
 .actions {
   font-size: 0.8em;
+  a {
+  color: red;
+  }
 }
 
 #discussion {
-  margin: 50px 0px 30px 19px;
+  margin: 40px 0px 40px 19px;
   font-variant: small-caps;
   font-weight: bolder;
 }
@@ -87,10 +90,56 @@ a:hover {
 }
 
 .block {
-  margin: 5px;
+  overflow: hidden;
+  width: 539px;
+  height: 395px;
+  margin-right: 14px;
+  margin-bottom: 11px;
   display: inline-block;
   img {
-  width: 355px;
-  height: 310px;
+  height: 430px;
+  width: auto;
   }
+}
+
+.block:last-child {
+  margin-right: 0px;
+}
+
+.footer {
+  height: 65px;
+  margin-top: 40px;
+  padding-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #3e4753;
+  color: white;
+}
+
+.list-group {
+  margin-top: 20px;
+}
+
+#list-title {
+  margin-top: 20px;
+}
+
+.post-three {
+  margin-top: 40px;
+}
+
+.block-three {
+  overflow: hidden;
+  width: 265px;
+  height: 264px;
+  margin-right: 9px;
+  display: inline-block;
+  img {
+  height: 265px;
+  width: auto;
+  }
+}
+
+.block-three:last-child {
+  margin-right: 0px;
 }

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
 
   get "sessions/destroy"
+  get '/list', to: "posts#list", as: "list"
 
   resources :posts do
     resources :comments
