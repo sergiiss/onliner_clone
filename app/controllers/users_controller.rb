@@ -23,11 +23,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params.except(:avatar))
 
     if @user.save
-      if params[:user][:avatar]
-        @user.create_avatar(user_params[:avatar])
-
-        @user.update_attributes(avatar: "avatar#{@user.id}.png")
-      end
+      @user.create_avatar(user_params[:avatar])
 
       user_input_to_session
 
@@ -40,11 +36,8 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        if params[:user][:avatar]
-          @user.create_avatar(user_params[:avatar])
-
-          @user.update_attributes(avatar: "avatar#{@user.id}.png")
-        end
+        @user.create_avatar(user_params[:avatar])
+        
         format.html { redirect_to @user, alert: 'Данные пользователя были успешно обновлены.' }
         format.json { render :show, status: :ok, location: @user }
       else
