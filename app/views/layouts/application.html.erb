@@ -37,7 +37,7 @@
             </div>
 
             <div class="user user-name"><%= current_user.name %>
-              <div class="output"><%= link_to 'Выйти', sessions_destroy_path %></div>
+              <div class="output"><%= link_to 'Выйти', logout_path %></div>
           <% else %>
               <div class="input-button">
                 <span><%= link_to 'Регистрация', new_user_path, class: 'btn btn-success' %></span>

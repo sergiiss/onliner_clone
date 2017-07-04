@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :users
 
-  resource :sessions, only: [:new, :create, :destroy]
+  resource :sessions, only: [:new, :create ]
 
-  get "sessions/destroy"
+  get '/logout', to: "sessions#destroy", as: "logout"
   get '/list', to: "posts#list", as: "list"
 
   resources :posts do

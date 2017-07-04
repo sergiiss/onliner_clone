@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def user_input_to_session
+  def login
     session[:user_id] = @user.id
   end
 
