@@ -5,7 +5,9 @@ class PostsController < ApplicationController
   before_action :authorize_admin, except: [ :index, :show ]
 
   def index
-    @posts = Post.all
+    @main_posts      = Post.where(rank: 1).limit(4).order(created_at: :desc)
+    @secondary_posts = Post.where(rank: 2).limit(4).order(created_at: :desc)
+    @minor_posts     = Post.where(rank: 3).limit(8).order(created_at: :desc)
   end
 
   def new
