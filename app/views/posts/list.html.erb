@@ -1,15 +1,17 @@
 
 <h2 id="list-title">Изменить ранг статьи</h2>
 <ul class="list-group">
-  <% @posts.each do |post| %>
-    <li class="list-group-item justify-content-between">
-      <%= post.title %>
-      <span class="badge badge-default badge-pill">
-        <%= form_for post do |f| %>
-          <%= f.select :rank, (1..4) %>
-          <%= f.submit 'Сохранить' %>
-        <% end %>
-      </span>
-    </li>
+  <%= form_tag change_rank_path, method: :post do |f| %>
+    <% @posts.each do |post| %>
+      <li class="list-group-item justify-content-between">
+        <%= post.title %>
+        
+        <span class="badge badge-default badge-pill">
+          <%= select_tag post.id, (1..4) %>
+        </span>
+      </li>
+    <% end %>
+  
+    <%= submit_tag 'Сохранить' %>
   <% end %>
 </ul>
