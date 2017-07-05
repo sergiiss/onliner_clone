@@ -87,14 +87,6 @@ a:hover {
   margin-top: 5px;
 }
 
-.list-group {
-  margin-top: 20px;
-}
-
-#list-title {
-  margin-top: 20px;
-}
-
 ul.rank2 {
   text-align: justify;
   margin: 0px;
@@ -155,3 +147,10 @@ ul.rank3 li.helper {
   margin-bottom: 30px;
 }
 
+.table-rank {
+  width: 89%;
+}
+
+.table td, th {
+  padding: 12px 0px !important;
+}
