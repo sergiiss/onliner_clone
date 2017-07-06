@@ -8,17 +8,24 @@
   float: right;
   height: 70px;
   text-align: left;
-  margin-top: 5px;
+  margin-top: 25px;
 }
 
 .input-button {
-  line-height: 60px;
-  font-size: 0.9em;
-  padding-left: 70px;
+  display: inline-block;
+  float: right;
+  margin-top: 5px;
+  padding-right: 45px;
 }
 
 .user {
   display: inline-block;
+  padding-right: 10px;
+  img {
+    border: 1px solid #ccc;
+    border-radius: 60px;
+    background-color: #ccc;
+  }
 }
 
 .avatar {
@@ -26,8 +33,20 @@
 }
 
 .user-name {
+  display: inline-block;
   float: right;
   min-width: 60px;
+}
+
+.btn-outline-secondary {
+  padding-left: 45px !important;
+  padding-right: 45px !important;
+  background-color: #fff !important;
+  height: 40px !important;
+}
+
+.btn-outline-secondary:hover {
+  color: gray !important;
 }
 
 .show-user {
