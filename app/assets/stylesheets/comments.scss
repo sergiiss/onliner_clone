@@ -2,13 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#discussion {
+  margin-left: 150px;
+  width: 840px;
+}
+
+#discussion h1 {
+  margin: 40px 0px 24px 0px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000;
+}
+
+.actions {
+  font-size: 10px !important;
+  a {
+  color: red;
+  }
+}
+
+.border {
+  height: 10px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
 .comment {
   margin: 15px 0px;
   padding: 20px 0px;
-}
-
-.comment span {
-  font-size: 0.8em;
 }
 
 .comment h3 {
@@ -17,26 +37,24 @@
 }
 
 .best-comment {
-  margin: 0px 0px 50px 0px;
+  margin-bottom: 50px;
 }
 
 .avatar-comment {
   display: inline-block;
   vertical-align: top;
-  text-align: center;
-  width: 110px;
+  width: 80px;
   height: auto;
   img {
-    width: 64px;
-    height: 64px;
+    width: 60px;
+    height: 60px;
     border-radius: 70px;
-    box-shadow: 0 0 0 2px #c6f2cd, 0 0 13px #333;
+    box-shadow: 0 0 0 1px white, 0 0 13px #333;
   }
 }
 
 .save-text-comment {
   display: inline-block;
-  width: 88%;
 }
 
 .save-form_comment {

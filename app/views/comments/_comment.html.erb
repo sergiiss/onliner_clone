@@ -1,14 +1,27 @@
 <div class="comment">
   <div class="avatar-comment">
-    <% if image_tag("/avatars/#{comment.user_id}/avatar#{comment.user_id}.png").present? %>
-      <%= link_to((image_tag "/avatars/#{comment.user_id}/avatar#{comment.user_id}.png"), user_path(comment.user_id)) %>
+    <% if User.find_by(:id => comment.user_id) %>
+      <% if User.find_by(:id => comment.user_id).avatar %>
+        <%= link_to((image_tag "/avatars/#{comment.user_id}/avatar#{comment.user_id}.png"), user_path(comment.user_id)) %>
+      <% else %>
+        <%= link_to((image_tag 'images.png'), user_path(comment.user_id)) %>
+      <% end %>
     <% else %>
-      <%= link_to((image_tag 'images.png'), user_path(comment.user_id)) %>
+      <% if File.file?(File.join(Rails.public_path, 'avatars', comment.user_id.to_s, "avatar#{comment.user_id}.png")) %>
+        <%= link_to((image_tag "/avatars/#{comment.user_id}/avatar#{comment.user_id}.png"), user_path(comment.user_id)) %>
+      <% else %>
+        <%= link_to((image_tag 'images.png'), user_path(comment.user_id)) %>
+      <% end %>
     <% end %>
   </div>
   <div class="save-text-comment">
     <h3><%= comment.name %></h3>
-    <div id="date_comment"><%= comment.created_at.strftime("%F в %H:%M") %></div>
+    <div id="date_comment">
+      <%= comment.created_at.strftime("%F в %H:%M") %>
+      <% if current_user && current_user.admin? %>
+        <span class="actions"><%= link_to 'Удалить комментарий', [comment.post, comment], method: :delete, data: { confirm: 'Вы уверены?'} %></span>
+      <% end %>
+    </div>
     <p>
       <%= comment.body %>
     </p>
@@ -50,10 +63,6 @@
       <% if best_comment %>
         <div class="like-best"><span>Лучший комментарий</span></div>
       <% end %>
-    <% end %>
-
-    <% if current_user && current_user.admin? %>
-      <span><%= link_to 'Удалить комментарий', [comment.post, comment], method: :delete, data: { confirm: 'Вы уверены?'} %></span>
     <% end %>
   </div>
 </div>

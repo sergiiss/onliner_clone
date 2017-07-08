@@ -1,28 +1,33 @@
 <div class="show">
-    <h3><%= @post.title %></h3>
-    <div id="show-image">
-      <%= image_tag @post.image.url %>
-    </div>
-    <div class="text-post"><%= @post.body %></div>
+  <div id="show-image">
+    <%= image_tag @post.image.url %>
+  </div>
+  <h2><%= @post.title %></h2>
+  <div class="text-post"><%= @post.body %>
+
+    <% if current_user && current_user.admin? %>
+      <div>
+        <span class="actions"><%= link_to 'Редактировать статью', edit_post_path(@post) %></span>
+        |
+        <span class="actions"><%= link_to 'Удалить статью', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?'} %></span>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<% if current_user && current_user.admin? %>
-  <span class="actions"><%= link_to 'Редактировать статью', edit_post_path(@post) %></span>
-  |
-  <span class="actions"><%= link_to 'Удалить статью', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?'} %></span>
-<% end %>
-<% if current_user.present? %>
-  <h1 id="discussion">Обсуждение</h1>
-<% end %>
+<div id="discussion">
+    <h1>ОБСУЖДЕНИЕ</h1>
+    <div class="border"></div>
 
-<% if @best_comment.present? %>
-  <div class="best-comment">
-    <%= render partial: 'comments/comment', object: @best_comment, locals: { best_comment: true } %>
-  </div>
-<% end %>
+  <% if @best_comment.present? %>
+    <div class="best-comment">
+      <%= render partial: 'comments/comment', object: @best_comment, locals: { best_comment: true } %>
+    </div>
+  <% end %>
 
-<% if User.find_by(id: session[:user_id]) %>
-  <%= render partial: "comment_form", locals: { post: @post } %>
-<% end %>
+  <% if User.find_by(id: session[:user_id]) %>
+    <%= render partial: "comment_form", locals: { post: @post } %>
+  <% end %>
 
-<%= render partial: 'comments/comment', collection: @comments, locals: { best_comment: false } %>
+  <%= render partial: 'comments/comment', collection: @comments, locals: { best_comment: false } %>
+</div>

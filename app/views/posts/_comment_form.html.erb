@@ -11,7 +11,7 @@
     <div class="save-text-comment">
       <%= f.hidden_field :name, :value => current_user.name %>
       <span>
-        <%= f.text_area :body, size: "135x4", class: "form-control", id: "exampleSelect2", :placeholder => "#{current_user.name.capitalize}, прокомментируйте эту статью..."  %>
+        <%= f.text_area :body, size: "90x3", class: "form-control", id: "exampleSelect2", :placeholder => "#{current_user.name.capitalize}, прокомментируйте эту статью..."  %>
       </span>
       <div class="button-form"><%= f.submit 'Оставить комментарий', class: "btn btn-outline-success" %></div>
     </div>
