@@ -33,36 +33,24 @@
   font-weight: bold;
 }
 
+.top-news {
+  width: 1400px;
+}
+
 .top-pages {
-  display: inline-block;
-  width: 348px;
+  float: left;
+  width: 25%;
   overflow: hidden;
   height: 449px;
-  margin-right: -1px;
-  img {
-  height: 449px;
-  width: auto;
-  }
-}
-
-.top-pages:last-child {
-  width: 349px;
-  margin-left: -1px;
-  margin-right: 0px;
-}
-
-.top-pages:first-child {
-  margin-right: -2px;
 }
 
 .top-pages-top {
   width: 349px;
   overflow: hidden;
   height: 298px;
-  margin-right: -2px;
   img {
   height: 298px;
-  width: auto;
+  width: 100%;
   }
 }
 
@@ -70,11 +58,10 @@
   width: 349px;
   overflow: hidden;
   height: 149px;
-  margin-right: -2px;
-  margin-top: 2px;
+  margin-top: 1px;
   img {
   height: auto;
-  width: 349px;
+  width: 100%;
   }
 }
 

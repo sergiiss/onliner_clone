@@ -1,4 +1,4 @@
-<div>
+<div class="top-news">
   <% if @posts.find_by(rank: 2) %>
     <% @posts.where(rank: 2).limit(4).each do |post| %>
       <div class="top-pages">
@@ -12,11 +12,11 @@
 <h1 id="title-posts">ЛЮДИ</h1>
 
 <div class="green">
-  <div class="green-part"></div>
-  <div class="green-part"></div>
-  <div class="green-part"></div>
-  <div class="green-part"></div>
-  <div class="green-part"></div>
+  <% if @posts.find_by(rank: 2) %>
+    <% @posts.where(rank: 2).limit(5).each do |post| %>
+      <div class="green-part"><%= link_to((image_tag post.image.url), post_path(post)) %></div>
+    <% end %>
+  <% end %>
 </div>
 
 <div class="people">
@@ -77,11 +77,11 @@
 <h1 id="title-posts">АВТО</h1>
 
 <div class="green">
-  <div class="green-part"></div>
-  <div class="green-part"></div>
-  <div class="green-part"></div>
-  <div class="green-part"></div>
-  <div class="green-part"></div>
+  <% if @posts.find_by(rank: 3) %>
+    <% @posts.where(rank: 3).limit(5).each do |post| %>
+      <div class="green-part"><%= link_to((image_tag post.image.url), post_path(post)) %></div>
+    <% end %>
+  <% end %>
 </div>
 
 <div class="people">

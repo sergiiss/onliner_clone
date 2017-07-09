@@ -11,6 +11,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-color: white;
+  min-width: 780px;
 }
 
 .advt {
@@ -128,33 +129,6 @@ a:hover {
   background-color: red;
 }
 
-.carousel-item {
-  background-color: #51648e;
-  a {
-  display: block;
-    img {
-      max-height: 395px;
-    }
-  }
-}
-
-.carousel-item p, span {
-  a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-variant: small-caps;
-    font-size: 1.4em;
-    padding: 10px;
-  }
-}
-
-.carousel-item span {
-  a {
-    font-size: 0.9em;
-  }
-}
-
 .button-form {
   margin-top: 5px;
 }
@@ -205,21 +179,12 @@ ul.rank3 li.helper {
   visibility: hidden;
 }
 
-.carousel {
-  margin-bottom: 30px;
-}
-
 .table-rank {
   width: 89%;
 }
 
 .table td, th {
   padding: 12px 0px !important;
-}
-
-.green {
-  height: 100px;
-  background-color: green;
 }
 
 .footer {

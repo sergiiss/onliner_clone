@@ -134,11 +134,17 @@
   vertical-align: top;
 }
 
-.green-part {
-  display: inline-block;
+.green {
   height: 100px;
-  width: 280px;
-  margin-right: -1px;
-  margin-left: -2px;
+}
+
+.green-part {
+  float: left;
+  height: 100px;
+  width: 20%;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
