@@ -1,9 +1,11 @@
 <div>
-  <% @posts.where(rank: 2).limit(4).each do |post| %>
-    <div class="top-pages">
-      <div class="top-pages-top"><%= link_to((image_tag post.image.url), post_path(post)) %></div>
-      <div class="top-pages-bottom"><%= link_to((image_tag post.image.url), post_path(post)) %></div>
-    </div>
+  <% if @posts.find_by(rank: 2) %>
+    <% @posts.where(rank: 2).limit(4).each do |post| %>
+      <div class="top-pages">
+        <div class="top-pages-top"><%= link_to((image_tag post.image.url), post_path(post)) %></div>
+        <div class="top-pages-bottom"><%= link_to((image_tag post.image.url), post_path(post)) %></div>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
@@ -18,44 +20,53 @@
 </div>
 
 <div class="people">
-  <section class="people1">
-    <figure><%= image_tag(Post.find_by(rank: 1).image.url) %></figure>
-    <article>
-      <div class="people1-title">
-        <div class="people1-group">СОЦИУМ</div>
-        <h3><%= link_to(Post.find_by(rank: 1).title, post_path(Post.find_by(rank: 1))) %></h3>
-      </div>
-      <div class="people1-summary"><%= Post.find_by(rank: 1).summary %></div>
-    </article>
-  </section>
-
+  <% if @posts.find_by(rank: 1) %>
+    <section class="people1">
+      <figure><%= image_tag(Post.find_by(rank: 1).image.url) %></figure>
+      <article>
+        <div class="people1-title">
+          <div class="people1-group">СОЦИУМ</div>
+          <h3><%= link_to(Post.find_by(rank: 1).title, post_path(Post.find_by(rank: 1))) %></h3>
+        </div>
+        <div class="people1-summary"><%= Post.find_by(rank: 1).summary %></div>
+      </article>
+    </section>
+  <% end %>
   <section class="people2">
-    <figure><%= image_tag(Post.find_by(rank: 4).image.url) %></figure>
-    <article>
-      <h4 id="people2-title"><%= link_to(Post.find_by(rank: 4).title, post_path(Post.find_by(rank: 4))) %></h4>
-      <div class="people2-summary"><%= Post.find_by(rank: 4).summary %></div>
-    </article>
+    <% if @posts.find_by(rank: 4) %>
+      <figure><%= image_tag(Post.find_by(rank: 4).image.url) %></figure>
+      <article>
+        <h4 id="people2-title"><%= link_to(Post.find_by(rank: 4).title, post_path(Post.find_by(rank: 4))) %></h4>
+        <div class="people2-summary"><%= Post.find_by(rank: 4).summary %></div>
+      </article>
+    <% end %>
   </section>
 
   <section class="people3">
     <ul>
       <li>
-        <figure><%= image_tag(Post.find_by(rank: 3).image.url) %></figure>
-        <div class="people3-title">
-          <h4><%= link_to(Post.find_by(rank: 3).title, post_path(Post.find_by(rank: 3))) %></h4>
-        </div>
+        <% if @posts.find_by(rank: 3) %>
+          <figure><%= image_tag(Post.find_by(rank: 3).image.url) %></figure>
+          <div class="people3-title">
+            <h4><%= link_to(Post.find_by(rank: 3).title, post_path(Post.find_by(rank: 3))) %></h4>
+          </div>
+        <% end %>
       </li>
       <li>
-        <figure><%= image_tag(Post.find_by(rank: 1).image.url) %></figure>
-        <div class="people3-title">
-          <h4><%= link_to(Post.find_by(rank: 1).title, post_path(Post.find_by(rank: 1))) %></h4>
-        </div>
+        <% if @posts.find_by(rank: 1) %>
+          <figure><%= image_tag(Post.find_by(rank: 1).image.url) %></figure>
+          <div class="people3-title">
+            <h4><%= link_to(Post.find_by(rank: 1).title, post_path(Post.find_by(rank: 1))) %></h4>
+          </div>
+        <% end %>
       </li>
       <li>
-        <figure><%= image_tag(Post.find_by(rank: 2).image.url) %></figure>
-        <div class="people3-title">
-          <h4><%= link_to(Post.find_by(rank: 2).title, post_path(Post.find_by(rank: 2))) %></h4>
-        </div>
+        <% if @posts.find_by(rank: 2) %>
+          <figure><%= image_tag(Post.find_by(rank: 2).image.url) %></figure>
+          <div class="people3-title">
+            <h4><%= link_to(Post.find_by(rank: 2).title, post_path(Post.find_by(rank: 2))) %></h4>
+          </div>
+        <% end %>
       </li>
     </ul>
   </section>
@@ -75,45 +86,53 @@
 
 <div class="people">
   <section class="people2">
-    <figure><%= image_tag(Post.find_by(rank: 4).image.url) %></figure>
-    <article>
-      <h4 id="people2-title"><%= link_to(Post.find_by(rank: 4).title, post_path(Post.find_by(rank: 4))) %></h4>
-      <div class="people2-summary"><%= Post.find_by(rank: 4).summary %></div>
-    </article>
+    <% if @posts.find_by(rank: 4) %>
+      <figure><%= image_tag(Post.find_by(rank: 4).image.url) %></figure>
+      <article>
+        <h4 id="people2-title"><%= link_to(Post.find_by(rank: 4).title, post_path(Post.find_by(rank: 4))) %></h4>
+        <div class="people2-summary"><%= Post.find_by(rank: 4).summary %></div>
+      </article>
+    <% end %>
   </section>
 
   <section class="people1">
-    <figure><%= image_tag(Post.find_by(rank: 1).image.url) %></figure>
-    <article>
-      <div class="people1-title">
-        <div class="people1-group">СОЦИУМ</div>
-        <h3><%= link_to(Post.find_by(rank: 1).title, post_path(Post.find_by(rank: 1))) %></h3>
-      </div>
-      <div class="people1-summary"><%= Post.find_by(rank: 1).summary %></div>
-    </article>
+    <% if @posts.find_by(rank: 1) %>
+      <figure><%= image_tag(Post.find_by(rank: 1).image.url) %></figure>
+      <article>
+        <div class="people1-title">
+          <div class="people1-group">СОЦИУМ</div>
+          <h3><%= link_to(Post.find_by(rank: 1).title, post_path(Post.find_by(rank: 1))) %></h3>
+        </div>
+        <div class="people1-summary"><%= Post.find_by(rank: 1).summary %></div>
+      </article>
+    <% end %>
   </section>
-
-
 
   <section class="people3">
     <ul>
       <li>
-        <figure><%= image_tag(Post.find_by(rank: 2).image.url) %></figure>
-        <div class="people3-title">
-          <h4><%= link_to(Post.find_by(rank: 2).title, post_path(Post.find_by(rank: 2))) %></h4>
-        </div>
+        <% if @posts.find_by(rank: 2) %>
+          <figure><%= image_tag(Post.find_by(rank: 2).image.url) %></figure>
+          <div class="people3-title">
+            <h4><%= link_to(Post.find_by(rank: 2).title, post_path(Post.find_by(rank: 2))) %></h4>
+          </div>
+        <% end %>
       </li>
       <li>
-        <figure><%= image_tag(Post.find_by(rank: 4).image.url) %></figure>
-        <div class="people3-title">
-          <h4><%= link_to(Post.find_by(rank: 4).title, post_path(Post.find_by(rank: 4))) %></h4>
-        </div>
+        <% if @posts.find_by(rank: 4) %>
+          <figure><%= image_tag(Post.find_by(rank: 4).image.url) %></figure>
+          <div class="people3-title">
+            <h4><%= link_to(Post.find_by(rank: 4).title, post_path(Post.find_by(rank: 4))) %></h4>
+          </div>
+        <% end %>
       </li>
       <li>
-        <figure><%= image_tag(Post.find_by(rank: 3).image.url) %></figure>
-        <div class="people3-title">
-          <h4><%= link_to(Post.find_by(rank: 3).title, post_path(Post.find_by(rank: 3))) %></h4>
-        </div>
+        <% if @posts.find_by(rank: 3) %>
+          <figure><%= image_tag(Post.find_by(rank: 3).image.url) %></figure>
+          <div class="people3-title">
+            <h4><%= link_to(Post.find_by(rank: 3).title, post_path(Post.find_by(rank: 3))) %></h4>
+          </div>
+        <% end %>
       </li>
     </ul>
   </section>
