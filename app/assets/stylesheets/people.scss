@@ -1,0 +1,144 @@
+#title-posts {
+  padding: 40px 0px 10px 20px;
+  letter-spacing: -1px;
+  font-size: 2.2em;
+  color: #333;
+}
+
+.line {
+  height: 10px;
+  border-top: 1px solid #e6e6e6;
+  margin: 0px 20px;
+
+}
+
+.people {
+  height: 530px;
+  margin: 20px 0px;
+}
+
+.people1 {
+  img {
+    height: 260px;
+    width: 100%;
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: top;
+  width: 540px;
+  height: 530px;
+  padding-right: 20px;
+  margin-left: 17px;
+  border-right: 1px solid #e6e6e6;
+}
+
+.people1-title {
+  float: left;
+  vertical-align: top;
+  width: 45%;
+  a {
+    color: #004d99;
+  }
+}
+
+.people1-group {
+  margin-bottom: 10px;
+  color: gray;
+  font-size: 0.7em;
+}
+
+.people1-summary {
+  float: right;
+  vertical-align: top;
+  width: 50%;
+  font-size: 0.9em;
+}
+
+.people2 {
+  img {
+    height: 131px;
+    width: 100%;
+  }
+   a {
+    color: #004d99;
+  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: top;
+  width: 260px;
+  height: 530px;
+  padding-right: 20px;
+  margin-left: 17px;
+  border-right: 1px solid #e6e6e6;
+}
+
+#people2-title {
+  margin-bottom: 20px;
+}
+
+.people2-summary {
+  font-size: 0.9em;
+}
+
+.people3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: top;
+  width: 540px;
+  height: 530px;
+  padding-right: 20px;
+  margin-left: 17px;
+  ul {
+    list-style-type: none;
+    padding-left: 0px;
+    li{
+      figure {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 17px;
+      }
+      img {
+        width: 240px;
+        height: 130px;
+      }
+      height: 150px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e6e6e6;
+      margin-top: 20px;
+    }
+    li:first-child {
+      margin-top: 0px;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.people3-title {
+  a {
+    color: #004d99;
+  }
+  h4 {
+    font-size: 17px;
+    margin: 0px;
+  }
+  h3 {
+    font-size: 17px;
+  }
+  width: 49%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.green-part {
+  display: inline-block;
+  height: 100px;
+  width: 280px;
+  margin-right: -1px;
+  margin-left: -2px;
+}
+

@@ -10,6 +10,7 @@ body {
   width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  background-color: white;
 }
 
 .advt {
@@ -204,16 +205,6 @@ ul.rank3 li.helper {
   visibility: hidden;
 }
 
-.footer {
-  height: 65px;
-  margin-top: 15px;
-  padding-top: 10px;
-  text-align: center;
-  font-weight: bold;
-  background-color: #3e4753;
-  color: white;
-}
-
 .carousel {
   margin-bottom: 30px;
 }
@@ -224,4 +215,21 @@ ul.rank3 li.helper {
 
 .table td, th {
   padding: 12px 0px !important;
+}
+
+.green {
+  height: 100px;
+  background-color: green;
+}
+
+.footer {
+  height: 82px;
+  margin-top: 15px;
+  padding: 20px 0px 0px 20px;
+  font-size: 0.8em;
+  background-color: #3e4753;
+  color: white;
+  span {
+    padding-right: 10px;
+  }
 }
