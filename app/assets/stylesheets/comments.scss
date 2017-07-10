@@ -4,7 +4,7 @@
 
 #discussion {
   margin-left: 150px;
-  width: 840px;
+  width: 820px;
 }
 
 #discussion h1 {
@@ -40,6 +40,14 @@
   margin-bottom: 50px;
 }
 
+.save-form_comment {
+  margin-left: -150px;
+  padding: 40px 0px 40px 150px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  background-color: #f4f6f9;
+}
+
 .avatar-comment {
   display: inline-block;
   vertical-align: top;
@@ -48,19 +56,21 @@
   img {
     width: 60px;
     height: 60px;
-    border-radius: 70px;
-    box-shadow: 0 0 0 1px white, 0 0 13px #333;
+    border-radius: 61px;
+    box-shadow: 0 0 0 1px white, 0 0 10px #333;
   }
 }
 
 .save-text-comment {
   display: inline-block;
+  textarea {
+    width: 700px;
+    height: 60px;
+  }
 }
 
-.save-form_comment {
-  padding: 20px 0px;
-  margin-bottom: 40px;
-  background-color: #f4f6f9;
+.button-form {
+  margin-top: 20px;
 }
 
 #date_comment {

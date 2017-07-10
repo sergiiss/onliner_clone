@@ -1,17 +1,19 @@
 class LikesController < ApplicationController
-  before_action :find_comment, only: [ :create, :destroy ]
-
   def new
     @like = Like.new
   end
 
   def create
+    find_comment
+
     @like = @comment.likes.create(like_params.merge(:user_id => @current_user.id))
 
     redirect_to post_path(@comment.post)
   end
 
   def destroy
+    find_comment
+
     @like = @comment.likes.find_by(:user_id => @current_user.id)
     @like.destroy
 

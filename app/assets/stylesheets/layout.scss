@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif;
+  font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif !important;
   font-size: 16px;
   background-color: #f4f4f4 !important;
   padding: 0px;
@@ -16,6 +16,9 @@ body {
 
 .advt {
   height: 90px;
+  img {
+    width: 100%;
+  }
 }
 
 .top-menu {
@@ -129,10 +132,6 @@ a:hover {
   background-color: red;
 }
 
-.button-form {
-  margin-top: 5px;
-}
-
 ul.rank2 {
   text-align: justify;
   margin: 0px;
@@ -197,4 +196,12 @@ ul.rank3 li.helper {
   span {
     padding-right: 10px;
   }
+}
+
+#list-title {
+  padding-left: 20px !important;
+}
+
+#list-head {
+  padding-left: 20px !important;
 }
