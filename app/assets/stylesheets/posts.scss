@@ -47,23 +47,28 @@
 
 .top-pages-top {
   width: 349px;
+  height: 299px;
   overflow: hidden;
-  height: 298px;
   img {
-  height: 298px;
+  height: 299px;
   width: 100%;
   }
 }
 
 .top-pages-bottom {
   width: 349px;
-  overflow: hidden;
   height: 149px;
+  overflow: hidden;
   margin-top: 1px;
   img {
-  height: auto;
+  height: 149px;
   width: 100%;
   }
+}
+
+.none-top-marg {
+  margin-top: 0px !important;
+  margin-bottom: 1px;
 }
 
 .dropdown-toggle {
