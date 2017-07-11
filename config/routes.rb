@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/logout', to: "sessions#destroy", as: "logout"
 
   resources :posts do
-    resources :commen
+    resources :comments
     
     collection do
       post :change_rank
