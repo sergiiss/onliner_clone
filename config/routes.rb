@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :commen
     
-    member do
+    collection do
       post :change_rank
     end
   end
