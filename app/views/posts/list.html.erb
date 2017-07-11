@@ -1,7 +1,7 @@
 
 <h2 id="list-title">Изменить ранг статьи</h2>
 <ul class="list-group">
-  <%= form_tag change_rank_path, method: :post do |f| %>
+  <%= form_tag change_rank_posts_path, method: :post do %>
     <% @posts.each do |post| %>
       <li class="list-group-item justify-content-between">
         <%= post.title %>
