@@ -44,6 +44,10 @@ class PostsController < ApplicationController
       render :edit
     end
   end
+  
+  def change_rank
+    # ...
+  end
 
   def list
     @posts = Post.all
