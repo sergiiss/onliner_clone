@@ -1,6 +1,6 @@
 <div class="top-news">
-  <% if @posts.find_by(rank: 2) %>
-    <% @posts.where(rank: 2).limit(4).each do |post| %>
+  <% if @main_posts %>
+    <% @main_posts.each do |post| %>
       <div class="top-pages">
         <div class="top-pages-top"><%= link_to((image_tag post.image.url), post_path(post)) %></div>
         <div class="top-pages-bottom"><%= link_to((image_tag post.image.url), post_path(post)) %></div>
@@ -12,8 +12,8 @@
 <h1 id="title-posts">ЛЮДИ</h1>
 
 <div class="green">
-  <% if @posts.find_by(rank: 2) %>
-    <% @posts.where(rank: 2).limit(5).each do |post| %>
+  <% if @minor_posts %>
+    <% @minor_posts.each do |post| %>
       <div class="green-part"><%= link_to((image_tag post.image.url), post_path(post)) %></div>
     <% end %>
   <% end %>

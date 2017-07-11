@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create ]
 
   get '/logout', to: "sessions#destroy", as: "logout"
-  get '/list', to: "posts#list", as: "list"
 
   resources :posts do
     resources :comments
   end
+
+  get '/list', to: "posts#list", as: "list"
 
   resources :comments do
     resources :likes
