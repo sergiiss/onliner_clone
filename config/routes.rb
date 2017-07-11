@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   get '/logout', to: "sessions#destroy", as: "logout"
 
   resources :posts do
-    resources :comments
+    resources :commen
+    
+    member do
+      post :change_rank
+    end
   end
 
   get '/list', to: "posts#list", as: "list"
