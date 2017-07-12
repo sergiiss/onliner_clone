@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     @main_posts = Post.where(rank: 1).limit(8).order(created_at: :desc)
-    @secondary_posts = Post.where(rank: 1).limit(3).order(created_at: :desc)
+    @secondary_posts = Post.where(rank: 2).limit(5).order(created_at: :desc)
     @minor_posts = Post.where(rank: 4).limit(5).order(created_at: :desc)
     @posts = Post.all
   end

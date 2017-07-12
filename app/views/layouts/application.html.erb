@@ -10,8 +10,8 @@
   </head>
   <body>
     <div class="advt"><%= image_tag("cat.gif", height: '90') %></div>
-    <div class="page">
-      <div class="top-menu">
+    <div class="top-menu">
+      <div class="top-menu-inside">
         <div class="catalog">
           <span>Каталог</span>
           <span>Новости</span>
@@ -22,14 +22,15 @@
           <span>Форум</span>
         </div>
       </div>
+    </div>
+    <div class="page">
       <div class="top-bar">
         <div class="bar1">
           <%= link_to((image_tag "https://gc.onliner.by/images/logo/onliner_logo.v3.png?token=1498651481", size: '180x40'), posts_path) %>
         </div>
 
         <div class="box">
-          <div class="container-1">
-            <span class="icon"><i class="fa fa-search"></i></span>
+          <div class="search">
             <input type="search" id="search" placeholder="Поиск в Каталоге. Например, 'паркет tarkett'" />
           </div>
         </div>

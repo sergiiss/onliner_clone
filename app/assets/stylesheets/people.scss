@@ -34,6 +34,10 @@
 }
 
 .people1-title {
+  h3 {
+    font-size: 25px;
+    font-weight: 700;
+  }
   float: left;
   vertical-align: top;
   width: 45%;
@@ -45,14 +49,14 @@
 .people1-group {
   margin-bottom: 10px;
   color: gray;
-  font-size: 0.7em;
+  font-size: 10px;
 }
 
 .people1-summary {
   float: right;
   vertical-align: top;
   width: 50%;
-  font-size: 0.9em;
+  font-size: 13px;
 }
 
 .people2 {
@@ -76,10 +80,11 @@
 
 #people2-title {
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .people2-summary {
-  font-size: 0.9em;
+  font-size: 13px;
 }
 
 .people3 {
@@ -123,28 +128,12 @@
     color: #004d99;
   }
   h4 {
-    font-size: 17px;
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 700;
     margin: 0px;
-  }
-  h3 {
-    font-size: 17px;
   }
   width: 49%;
   display: inline-block;
   vertical-align: top;
 }
-
-.green {
-  height: 100px;
-}
-
-.green-part {
-  float: left;
-  height: 100px;
-  width: 20%;
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
