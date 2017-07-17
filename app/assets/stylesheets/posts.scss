@@ -81,6 +81,10 @@
   line-height: 45px;
 }
 
+.dropdown-menu {
+  line-height: 20px;
+}
+
 .dropdown.show {
   margin-top: 0px !important;
 }
@@ -136,6 +140,8 @@
   text-shadow: 1px 2px 0px rgba(0,0,0,0.3);
   width: 280px;
   height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   p {
     position: absolute;
     bottom: 10px;

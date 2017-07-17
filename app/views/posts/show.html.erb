@@ -25,9 +25,7 @@
     </div>
   <% end %>
 
-  <% if User.find_by(id: session[:user_id]) %>
-    <%= render partial: "comment_form", locals: { post: @post } %>
-  <% end %>
+  <%= render partial: "comment_form", locals: { post: @post } %>
 
   <%= render partial: 'comments/comment', collection: @comments, locals: { best_comment: false } %>
 </div>
