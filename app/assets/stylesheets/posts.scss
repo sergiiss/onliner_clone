@@ -34,7 +34,7 @@
 }
 
 .top-news {
-  width: 1400px;
+  width: 100%;
   height: 449px;
 }
 
@@ -45,33 +45,47 @@
   height: 449px;
 }
 
+.top-pages-inside {
+  margin-right: 1px;
+}
+
 .top-pages-top {
-  width: 349px;
   height: 299px;
   overflow: hidden;
-  img {
-  height: 299px;
-  width: 100%;
-  }
-  p {
-    position: static !important;
-  }
 }
 
 .top-pages-bottom {
-  width: 349px;
   height: 149px;
   overflow: hidden;
   margin-top: 1px;
-  img {
-  height: 149px;
-  width: 100%;
-  }
 }
 
 .none-top-marg {
   margin-top: 0px !important;
   margin-bottom: 1px;
+}
+
+.link-text {
+  padding: 39px 20px 10px 20px;
+  font-size: 17px;
+  text-decoration: none !important;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+  width: 100%;
+  height: 100%;
+  display: block;
+  line-height: 60px;
+  p {
+    bottom: 10px;
+    color: white;
+    padding: 20px 20px 10px 20px;
+    font-weight: bolder;
+    line-height: 1 !important;
+    margin-bottom: 0px;
+  }
+}
+
+.link-text:hover {
+  color: white;
 }
 
 .dropdown-toggle {
@@ -93,57 +107,31 @@
   color: #fd2 !important;
 }
 
-.link-text {
-  padding: 39px 20px 10px 20px;
-  font-size: 17px;
-  position: absolute;
-  text-decoration: none !important;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
-  width: inherit;
-  height: inherit;
-  line-height: 60px;
-  p {
-    position: absolute;
-    bottom: 10px;
-    color: white;
-    padding: 20px 20px 10px 20px;
-    font-weight: bolder;
-    line-height: 1 !important;
-    margin-bottom: 0px;
-  }
-}
-
-.link-text:hover {
-  color: white;
-}
-
 .green {
   height: 100px;
 }
 
 .green-bottom {
   float: left;
-  height: 100px;
+  height: inherit;
   width: 20%;
 }
 
 .green-part {
   margin-right: 1px;
-  width: auto;
   height: inherit;
 }
 
 .link-text-green {
   font-size: 15px;
-  position: absolute;
+  display: block;
   text-decoration: none !important;
   text-shadow: 1px 2px 0px rgba(0,0,0,0.3);
-  width: 280px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   p {
-    position: absolute;
     bottom: 10px;
     color: white;
     padding: 20px 20px 10px 20px;
