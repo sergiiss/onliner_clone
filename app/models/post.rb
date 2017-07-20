@@ -9,10 +9,6 @@ class Post < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def best_comment
-    # best_comment_candidates = @post.comments.joins(:likes).select("comments.id, count(likes.id) as likes_count").order("likes_count desc").limit(2)
-
-    # best_comment = best_comment_candidates[0] != best_comment_candidates[1] ? best_comment_candidates[0] : nil
-
     get_comments_with_max_likes
 
     if @max_like_comment[1].present?
