@@ -7,10 +7,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
-
   def new
     @user = User.new
   end
@@ -30,6 +26,14 @@ class UsersController < ApplicationController
       redirect_to @user, notice: 'Пользователь был успешно создан.'
     else
       redirect_to new_user_path, alert: 'Пароль или логин неверен'
+    end
+  end
+
+  def show
+    if user?
+      @user = User.find(params[:id])
+    else
+      @user = current_user
     end
   end
 
@@ -59,7 +63,11 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:name, :password, :password_confirmation, :avatar, :id)
-    end
+  def user?
+    User.find_by(id: params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :password, :password_confirmation, :avatar, :id)
+  end
 end

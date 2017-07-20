@@ -1,13 +1,20 @@
 <div class="begin-session">
-  <br>
-  <h3>Пожалуйста, осуществите вход</h3>
-  <br>
-
   <% if flash[:alert].present? %>
     <p class="alert alert-danger"><%= flash[:alert] %></p>
   <% end %>
 
   <%= form_tag sessions_path do %>
+
+    <div class="table-row">
+      <span class="table-cell name"></span>
+      <span class="table-cell" style="padding-bottom: 20px;">
+        <span class="above-form-registr">
+          <span class="padding-to-sessions input-selection">Вход</span>
+          <%= link_to 'Регистрация', new_user_path %>
+        </span>
+      </span>
+    </div>
+
     <div class="table-row">
       <span class="table-cell name"><%= label_tag 'Имя' %></span>
       <span class="table-cell"><%= text_field_tag :name %></span>
@@ -22,7 +29,6 @@
       <span class="table-cell"></span>
       <span class="table-cell">
         <%= submit_tag 'Войти', class: 'btn btn-primary' %>
-        <%= link_to 'Регистрация', new_user_path, class: 'btn btn-success' %>
       </span>
     </div>
   <% end %>

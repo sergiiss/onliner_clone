@@ -24,6 +24,10 @@
   }
 }
 
+.user-with-avatar {
+  box-shadow: 0 0 0 1px white, 0 0 10px #333;
+}
+
 .avatar {
   margin-right: 20px;
 }
@@ -56,4 +60,25 @@
 
 .new-user {
   padding: 20px 0px 0px 20px;
+}
+
+.above-form-registr {
+  font-size: 19px;
+  a {
+    text-decoration: none !important;
+    color: black;
+  }
+}
+
+.padding-to-sessions {
+  margin-right: 20px;
+}
+
+.padding-to-input {
+  padding: 0px 20px;
+}
+
+.input-selection {
+  background-color: #f1f1f1;
+  padding: 5px 20px;
 }

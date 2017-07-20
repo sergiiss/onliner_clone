@@ -38,7 +38,7 @@
           <% if current_user %>
             <div class="user avatar">
               <% if current_user.avatar %>
-                <%= link_to((image_tag "/avatars/#{current_user.id}/avatar#{ current_user.id }.png", size: '60x60'), user_path(current_user.id)) %>
+                <%= link_to((image_tag "/avatars/#{current_user.id}/#{ current_user.avatar }", size: '60x60', class: "user-with-avatar"), user_path(current_user.id)) %>
               <% else %>
                 <%= link_to((image_tag url_for('https://content.onliner.by/user/avatar/60x60/197713'), width: '60', style: "background-color: #ccc; border: 1px solid #ccc;"), user_path(current_user.id)) %>
               <% end %>

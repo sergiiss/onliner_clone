@@ -2,7 +2,7 @@
   <div class="avatar-comment">
     <% if User.find_by(:id => comment.user_id) %>
       <% if User.find_by(:id => comment.user_id).avatar %>
-        <%= link_to((image_tag "/avatars/#{comment.user_id}/avatar#{comment.user_id}.png"), user_path(comment.user_id)) %>
+        <%= link_to((image_tag "/avatars/#{comment.user_id}/#{ User.find(comment.user_id).avatar }"), user_path(comment.user_id)) %>
       <% else %>
         <%= link_to((image_tag 'images.png'), user_path(comment.user_id)) %>
       <% end %>

@@ -4,7 +4,7 @@
   <% end %>
 
   <% if @user.avatar %>
-    <%= image_tag "/avatars/#{@user.id}/avatar#{ @user.id }.png", width: "76" %>
+    <%= image_tag "/avatars/#{@user.id}/#{ @user.avatar }", width: "76" %>
   <% end %>
   <div class="user-data">
     <strong>Имя:</strong>

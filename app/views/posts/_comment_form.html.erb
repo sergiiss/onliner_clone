@@ -4,7 +4,7 @@
       <%= f.error_messages %>
       <div class="avatar-comment">
         <% if current_user.avatar %>
-          <%= link_to((image_tag "/avatars/#{current_user.id}/avatar#{ current_user.id }.png"), user_path(current_user.id)) %>
+          <%= link_to((image_tag "/avatars/#{current_user.id}/#{ current_user.avatar }"), user_path(current_user.id)) %>
         <% else %>
           <%= link_to((image_tag 'images.png'), user_path(current_user.id)) %>
         <% end %>

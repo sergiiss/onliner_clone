@@ -101,11 +101,15 @@ a:hover {
 
 .table-cell {
   display: table-cell;
+  input {
+    height: 50px;
+    width: 600px;
+  }
 }
 
 .table-cell.name {
   vertical-align: top;
-  width: 60px;
+  width: 100px;
   font-weight: bolder;
   font-size: 0.9em;
 }
