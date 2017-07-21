@@ -21,10 +21,16 @@
 
 #new-post {
   margin-top: 40px;
+  padding-left: 20px;
 }
 
-.save-form_post {
-  padding: 40px 10px;
+.save-form-post {
+  padding: 20px 0px 20px 0px;
+}
+
+.font-size-title{
+  font-size: 1.2em;
+  padding-left: 5px;
 }
 
 .name {
@@ -94,25 +100,6 @@
   color: white;
 }
 
-.dropdown-toggle {
-  font-size: 1.1em !important;
-  text-decoration: none !important;
-  color: black !important;
-  line-height: 45px;
-}
-
-.dropdown-menu {
-  line-height: 20px;
-}
-
-.dropdown.show {
-  margin-top: 0px !important;
-}
-
-.nickname {
-  color: #fd2 !important;
-}
-
 .green {
   height: 100px;
 }
@@ -141,6 +128,7 @@
   width: 100%;
   height: inherit;
   display: table;
+
   p {
     display: table-cell;
     overflow: hidden;

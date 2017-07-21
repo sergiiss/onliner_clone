@@ -90,7 +90,7 @@
         <div class="green-part", style="background-image: url(<%= @minor_posts[index].image.url %>); background-size: cover;">
           <%= link_to(post_path(@minor_posts[index]), class: "link-text-green") do %>
             <p>
-              <%= minor_title_for_visual(index) %>
+              <%= post_title_for_visual(@minor_posts, index) %>
             </p>
           <% end %>
         </div>
@@ -101,8 +101,8 @@
 </div>
 
 <div class="people">
-  <% if @posts.find_by(rank: 1) %>
-    <section class="people1">
+  <section class="people1">
+    <% if @posts.find_by(rank: 1) %>
       <figure><%= link_to(image_tag(Post.find_by(rank: 1).image.url), post_path(Post.find_by(rank: 1)))  %></figure>
       <article>
         <div class="people1-title">
@@ -111,8 +111,9 @@
         </div>
         <div class="people1-summary"><%= Post.find_by(rank: 1).summary %></div>
       </article>
-    </section>
-  <% end %>
+    <% end %>
+  </section>
+
   <section class="people2">
     <% if @posts.find_by(rank: 4) %>
       <figure><%= link_to(image_tag(Post.find_by(rank: 4).image.url), post_path(Post.find_by(rank: 4))) %></figure>
@@ -164,7 +165,7 @@
       <div class="green-bottom">
         <div class="green-part", style="background-image: url(<%= @secondary_posts[index].image.url %>); background-size: cover;">
           <%= link_to(post_path(@secondary_posts[index]), class: "link-text-green") do %>
-            <p><%= @secondary_posts[index].title %></p>
+            <p><%= post_title_for_visual(@secondary_posts, index) %></p>
           <% end %>
         </div>
       </div>
@@ -174,6 +175,7 @@
 </div>
 
 <div class="people">
+
   <section class="people2">
     <% if @posts.find_by(rank: 4) %>
       <figure><%= link_to(image_tag(Post.find_by(rank: 4).image.url), post_path(Post.find_by(rank: 4))) %></figure>

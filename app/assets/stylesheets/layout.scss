@@ -86,6 +86,31 @@ body {
   background-position: 12px 50%;
 }
 
+.dropdown {
+  padding-top: 30px;
+  line-height: 20px;
+
+}
+
+.dropdown-toggle {
+  font-size: 1.1em !important;
+  text-decoration: none !important;
+  color: black !important;
+  line-height: 45px;
+}
+
+.dropdown-menu {
+  line-height: 20px;
+}
+
+.dropdown.show {
+  margin-top: 0px !important;
+}
+
+.nickname {
+  color: #fd2 !important;
+}
+
 a {
   color: black;
   text-decoration: none;
