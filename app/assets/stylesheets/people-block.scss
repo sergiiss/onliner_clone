@@ -17,9 +17,17 @@
     color: #004d99;
     font-size: 17px;
     padding: 15px 0px;
+    font-weight: 600;
   }
 }
 
 .people-block-summary {
   font-size: 15px;
+  a {
+    text-decoration: none !important;
+    color: black;
+  }
+  a:hover {
+    color: black;
+  }
 }

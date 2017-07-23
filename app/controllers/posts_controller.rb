@@ -61,8 +61,24 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def categorie
-    @posts = Post.all
+  def people
+    @posts = Post.all.where(categorie: 'Люди')
+  end
+
+  def technologies
+    @posts = Post.all.where(categorie: 'Технологии')
+  end
+
+  def opinions
+    @posts = Post.all.where(categorie: 'Мнения')
+  end
+
+  def auto
+    @posts = Post.all.where(categorie: 'Авто')
+  end
+
+  def realty
+    @posts = Post.all.where(categorie: 'Недвижимость')
   end
 
   def destroy

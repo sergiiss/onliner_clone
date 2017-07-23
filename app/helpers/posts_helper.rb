@@ -9,6 +9,10 @@ module PostsHelper
   end
 
   def сategory_selection
-    ['Люди', 'Мнения', 'Авто', 'Технологии', 'Недвижимость']
+    {
+      'Люди': :people, 'Мнения':     :opinions,
+      'Авто': :auto, 'Технологии': :technologies,
+      'Недвижимость': :realty
+    }
   end
 end
