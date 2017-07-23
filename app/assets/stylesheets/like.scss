@@ -1,0 +1,37 @@
+.like {
+  display: inline-block;
+  background-color: #f4f4f4;
+  min-width: 43px;
+  height: 27px;
+  padding-left: 3px;
+
+}
+
+.like-best {
+  display: inline-block;
+}
+
+.like-best span {
+  color: red;
+  font-size: 0.9em;
+  margin-left: 100px;
+}
+
+.like-botton {
+  margin-left: 12px;
+  position: absolute;
+  display: none;
+  input {
+    height: 26px;
+    padding: 0px 8px;
+    background-color: #e00;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 14px;
+  }
+}
+
+.like-all:hover .like-botton {
+  display: inline-block;
+}

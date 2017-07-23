@@ -87,12 +87,23 @@
 
   p {
     display: table-cell;
-    vertical-align: bottom;
     color: white;
     padding: 20px 20px 10px 20px;
     font-weight: bolder;
     line-height: 1 !important;
     margin-bottom: 0px;
+  }
+}
+
+.link-text-bottom {
+  p{
+    vertical-align: bottom;
+  }
+}
+
+.link-text-top {
+  p {
+    vertical-align: top;
   }
 }
 

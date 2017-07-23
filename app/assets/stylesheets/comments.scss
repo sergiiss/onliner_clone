@@ -82,39 +82,3 @@
   color: #c3c5c9;
   display: inline-block;
 }
-
-.like {
-  display: inline-block;
-  background-color: #f4f4f4;
-  min-width: 43px;
-  height: 27px;
-  padding-left: 3px;
-
-}
-
-.like-best {
-  display: inline-block;
-}
-
-.like-best span {
-  color: red;
-  font-size: 0.9em;
-  margin-left: 100px;
-}
-
-.like-botton {
-  margin-left: 12px;
-  position: absolute;
-  display: none;
-  input {
-    height: 26px;
-    background-color: red;
-    color: white;
-    border-color: red;
-    font-size: 14px;
-  }
-}
-
-.like-all:hover .like-botton {
-  display: inline-block;
-}

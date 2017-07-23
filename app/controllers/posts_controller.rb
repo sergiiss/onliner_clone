@@ -24,6 +24,19 @@ class PostsController < ApplicationController
     end
   end
 
+  def change_rank
+    params.each do |key, value|
+      if Post.find_by(:id => key)
+        post = Post.find_by(:id => key)
+
+        post.rank = value
+        post.save
+      end
+    end
+
+    redirect_to list_path
+  end
+
   def edit
     set_post
   end

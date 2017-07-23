@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments
+
+    collection do
+      post :change_rank
+    end
   end
 
   get '/list', to: "posts#list", as: "list"

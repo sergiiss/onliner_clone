@@ -21,17 +21,17 @@
   }
 }
 
+.user-name {
+  float: right;
+  min-width: 60px;
+}
+
 .user-with-avatar {
   box-shadow: 0 0 0 1px white, 0 0 10px #333;
 }
 
 .avatar {
   margin-right: 20px;
-}
-
-.user-name {
-  float: right;
-  min-width: 60px;
 }
 
 .btn-outline-secondary {
