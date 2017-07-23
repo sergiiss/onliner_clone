@@ -1,0 +1,25 @@
+.categories-people {
+  width: 100%;
+  padding: 40px;
+}
+
+.people-block {
+  margin: 20px;
+  width: 30.05%;
+  height: 440px;
+  display: inline-block;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 200px;
+  }
+  h3 {
+    color: #004d99;
+    font-size: 17px;
+    padding: 15px 0px;
+  }
+}
+
+.people-block-summary {
+  font-size: 15px;
+}

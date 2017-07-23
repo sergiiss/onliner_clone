@@ -1,3 +1,33 @@
+.categories {
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.active-categorie {
+  background-color: #e1e1e1;
+  margin: 0px !important;
+  height: 50px !important;
+  line-height: 50px !important;
+}
+
+.categories-menu {
+  border-right: 1px solid #e6e6e6;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 30px;
+  height: 30px;
+  float: left;
+  margin: 10px 0px;
+  padding: 0px 20px;
+  a {
+    display: block;
+    height: inherit;
+    width: 100%;
+    color: #004d99;
+  }
+}
+
 .text-post {
   margin: 0px 290px;
   padding: 10px 0px;

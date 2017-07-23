@@ -7,4 +7,8 @@ module PostsHelper
       text_title
     end
   end
+
+  def сategory_selection
+    ['Люди', 'Мнения', 'Авто', 'Технологии', 'Недвижимость']
+  end
 end

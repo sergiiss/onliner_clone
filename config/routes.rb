@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   end
 
   get '/list', to: "posts#list", as: "list"
+  get '/categorie', to: "posts#categorie", as: "categorie"
+
 
   resources :comments do
     resources :likes

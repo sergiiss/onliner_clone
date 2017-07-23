@@ -12,6 +12,11 @@
     </div>
 
     <div class="table-row">
+      <span class="table-cell name"><%= f.label 'Катерогия статьи' %></span>
+      <span class="table-cell"><%= f.select :categorie, (['Люди', 'Мнения', 'Авто', 'Технологии', 'Недвижимость']) %></span>
+    </div>
+
+    <div class="table-row">
       <span class="table-cell name"><%= f.label 'Фото статьи' %></span>
       <span class="table-cell"><%= f.file_field :image %></span>
     </div>

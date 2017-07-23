@@ -29,8 +29,7 @@ class PostsController < ApplicationController
       if Post.find_by(:id => key)
         post = Post.find_by(:id => key)
 
-        post.rank = value
-        post.save
+        post.update_attributes(:rank => value)
       end
     end
 
@@ -62,6 +61,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def categorie
+    @posts = Post.all
+  end
+
   def destroy
     set_post
 
@@ -77,6 +80,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :summary, :image, :rank)
+    params.require(:post).permit(:title, :body, :summary, :image, :rank, :categorie)
   end
 end
