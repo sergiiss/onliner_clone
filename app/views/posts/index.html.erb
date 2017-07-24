@@ -1,81 +1,30 @@
 <div class="top-news">
   <div class="top-pages">
     <div class="top-pages-inside">
-      <% if @main_posts[0] %>
-        <div class="top-pages-top", style="background-image: url(<%= @main_posts[0].image.url %>); background-size: cover;">
-          <%= link_to(post_path(@main_posts[0]), class: "link-text link-text-top") do %>
-            <p><%= @main_posts[0].title %></p>
-          <% end %>
-        </div>
-      <% end %>
-      <% if @main_posts[1] %>
-        <div class="top-pages-bottom", style="background-image: url(<%= @main_posts[1].image.url %>); background-size: cover;">
-          <%= link_to(post_path(@main_posts[1]), class: "link-text link-text-bottom") do %>
-            <p><%= @main_posts[1].title %></p>
-          <% end %>
-        </div>
-      <% end %>
+      <%= render partial: 'top_news', locals: { post_class: "top-pages-top", main_post: @main_posts[0] } %>
+
+      <%= render partial: 'top_news', locals: { post_class: "top-pages-bottom", main_post: @main_posts[1] } %>
     </div>
   </div>
   <div class="top-pages">
     <div class="top-pages-inside">
-      <% if @main_posts[2] %>
-        <div class="top-pages-bottom none-top-marg", style="background-image: url(<%= @main_posts[2].image.url %>); background-size: cover;">
-          <%= link_to(post_path(@main_posts[2]), class: "link-text link-text-bottom") do %>
-            <p><%= @main_posts[2].title %></p>
-          <% end %>
-        </div>
-      <% end %>
-      <% if @main_posts[3] %>
-        <div class="top-pages-top", style="background-image: url(<%= @main_posts[3].image.url %>); background-size: cover;">
-          <%= link_to(post_path(@main_posts[3]), class: "link-text link-text-top") do %>
-            <p><%= @main_posts[3].title %></p>
-          <% end %>
-        </div>
-      <% end %>
+      <%= render partial: 'top_news', locals: { post_class: "top-pages-bottom none-top-marg", main_post: @main_posts[2] } %>
+
+      <%= render partial: 'top_news', locals: { post_class: "top-pages-top", main_post: @main_posts[3] } %>
     </div>
   </div>
   <div class="top-pages">
     <div class="top-pages-inside">
-      <% if @main_posts[4] %>
-        <div class="top-pages-bottom none-top-marg", style="background-image: url(<%= @main_posts[4].image.url %>); background-size: cover;">
-          <%= link_to(post_path(@main_posts[4]), class: "link-text link-text-bottom") do %>
-            <p><%= @main_posts[4].title %></p>
-          <% end %>
-        </div>
-      <% end %>
-      <% if @main_posts[5] %>
-        <div class="top-pages-bottom none-top-marg", style="background-image: url(<%= @main_posts[5].image.url %>); background-size: cover;">
-          <%= link_to(post_path(@main_posts[5]), class: "link-text link-text-bottom") do %>
-            <p><%= @main_posts[5].title %></p>
-          <% end %>
-        </div>
-      <% end %>
-      <% if @main_posts[6] %>
-        <div class="top-pages-bottom", style="background-image: url(<%= @main_posts[6].image.url %>); background-size: cover;">
-          <%= link_to(post_path(@main_posts[6]), class: "link-text link-text-bottom") do %>
-            <p><%= @main_posts[6].title %></p>
-          <% end %>
-        </div>
-      <% end %>
+      <%= render partial: 'top_news', locals: { post_class: "top-pages-bottom none-top-marg", main_post: @main_posts[4] } %>
+      <%= render partial: 'top_news', locals: { post_class: "top-pages-bottom none-top-marg", main_post: @main_posts[5] } %>
+      <%= render partial: 'top_news', locals: { post_class: "top-pages-bottom", main_post: @main_posts[6] } %>
     </div>
   </div>
   <div class="top-pages">
     <div class="top-pages-inside">
-      <% if @main_posts[6] %>
-        <div class="top-pages-top", style="background-image: url(<%= @main_posts[6].image.url %>); background-size: cover;">
-          <%= link_to(post_path(@main_posts[6]), class: "link-text link-text-top") do %>
-            <p><%= @main_posts[6].title %></p>
-          <% end %>
-        </div>
-      <% end %>
-      <% if @main_posts[7] %>
-        <div class="top-pages-bottom", style="background-image: url(<%= @main_posts[7].image.url %>); background-size: cover;">
-          <%= link_to(post_path(@main_posts[7]), class: "link-text link-text-bottom") do %>
-            <p><%= @main_posts[7].title %></p>
-          <% end %>
-        </div>
-      <% end %>
+      <%= render partial: 'top_news', locals: { post_class: "top-pages-top", main_post: @main_posts[7] } %>
+
+      <%= render partial: 'top_news', locals: { post_class: "top-pages-bottom", main_post: @main_posts[8] } %>
     </div>
   </div>
 </div>
