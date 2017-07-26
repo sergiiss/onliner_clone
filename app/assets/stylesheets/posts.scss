@@ -127,11 +127,15 @@
 }
 
 .top-pages-top {
+  width: 100%;
   height: 299px;
   overflow: hidden;
+  background-color: #e0efd0;
 }
 
 .top-pages-bottom {
+  width: 100%;
+  background-color: #b5ccf2;
   height: 149px;
   overflow: hidden;
   margin-top: 1px;
@@ -193,6 +197,7 @@
   height: inherit;
   overflow: hidden;
   text-overflow: ellipsis;
+  background-color: #e0efd0;
 }
 
 .green-bottom:last-child .green-part {
