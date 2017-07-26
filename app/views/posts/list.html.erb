@@ -1,12 +1,12 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th class="table-rank" id="list-head">Название статьи</th>
-      <th>Ранг статьи</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= form_tag change_rank_posts_path, method: :post do %>
+<%= form_tag change_rank_posts_path, method: :post do %>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="table-rank" id="list-head">Название статьи</th>
+        <th>Ранг статьи</th>
+      </tr>
+    </thead>
+    <tbody>
       <% @posts.each do |post| %>
         <tr>
           <td scope="row" id="list-title">
@@ -23,6 +23,6 @@
             <%= submit_tag 'Сохранить' %>
           </td>
         </tr>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+<% end %>

@@ -16,14 +16,10 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    if session[:user_id]
-      @current_user ||= User.find(session[:user_id])
-    end
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def authorize_admin
-    if current_user.name != 'admin'
-      redirect_to new_sessions_path, alert: 'У Вас нет прав на это действие, пожалуйста пройдите аутентификацию'
-    end
+    redirect_to new_sessions_path, alert: 'У Вас нет прав на это действие, пожалуйста пройдите авторизацию' if current_user.name != 'admin'
   end
 end

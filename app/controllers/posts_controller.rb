@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user, only: [ :index, :show ]
+  skip_before_action :authenticate_user, only: [ :index, :show, :people, :technologies, :opinions, :auto, :realty ]
 
-  before_action :authorize_admin, except: [ :index, :show ]
+  before_action :authorize_admin, except: [ :index, :show, :people, :technologies, :opinions, :auto, :realty  ]
 
   def index
     @main_posts = Post.where(rank: 1).limit(9).order(created_at: :desc)

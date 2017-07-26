@@ -1,0 +1,6 @@
+<% if @posts.find_by(rank_number) %>
+  <figure><%= link_to(image_tag(Post.find_by(rank_number).image.url), post_path(Post.find_by(rank_number))) %></figure>
+  <div class="people3-title">
+    <h4><%= link_to(Post.find_by(rank_number).title, post_path(Post.find_by(rank_number))) %></h4>
+  </div>
+<% end %>

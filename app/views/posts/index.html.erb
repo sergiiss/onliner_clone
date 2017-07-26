@@ -76,28 +76,13 @@
   <section class="people3">
     <ul>
       <li>
-        <% if @posts.find_by(rank: 3) %>
-          <figure><%= link_to(image_tag(Post.find_by(rank: 3).image.url), post_path(Post.find_by(rank: 3))) %></figure>
-          <div class="people3-title">
-            <h4><%= link_to(Post.find_by(rank: 3).title, post_path(Post.find_by(rank: 3))) %></h4>
-          </div>
-        <% end %>
+        <%= render partial: 'people3_path', locals: { rank_number: {rank: 3} } %>
       </li>
       <li>
-        <% if @posts.find_by(rank: 1) %>
-          <figure><%= link_to(image_tag(Post.find_by(rank: 1).image.url), post_path(Post.find_by(rank: 1))) %></figure>
-          <div class="people3-title">
-            <h4><%= link_to(Post.find_by(rank: 1).title, post_path(Post.find_by(rank: 1))) %></h4>
-          </div>
-        <% end %>
+        <%= render partial: 'people3_path', locals: { rank_number: {rank: 1} } %>
       </li>
       <li>
-        <% if @posts.find_by(rank: 2) %>
-          <figure><%= link_to(image_tag(Post.find_by(rank: 2).image.url), post_path(Post.find_by(rank: 2))) %></figure>
-          <div class="people3-title">
-            <h4><%= link_to(Post.find_by(rank: 2).title, post_path(Post.find_by(rank: 2))) %></h4>
-          </div>
-        <% end %>
+        <%= render partial: 'people3_path', locals: { rank_number: {rank: 2} } %>
       </li>
     </ul>
   </section>
@@ -151,28 +136,13 @@
   <section class="people3">
     <ul>
       <li>
-        <% if @posts.find_by(rank: 2) %>
-          <figure><%= link_to(image_tag(Post.find_by(rank: 2).image.url), post_path(Post.find_by(rank: 2))) %></figure>
-          <div class="people3-title">
-            <h4><%= link_to(Post.find_by(rank: 2).title, post_path(Post.find_by(rank: 2))) %></h4>
-          </div>
-        <% end %>
+       <%= render partial: 'people3_path', locals: { rank_number: {rank: 4} } %>
       </li>
       <li>
-        <% if @posts.find_by(rank: 4) %>
-          <figure><%= link_to(image_tag(Post.find_by(rank: 4).image.url), post_path(Post.find_by(rank: 4))) %></figure>
-          <div class="people3-title">
-            <h4><%= link_to(Post.find_by(rank: 4).title, post_path(Post.find_by(rank: 4))) %></h4>
-          </div>
-        <% end %>
+        <%= render partial: 'people3_path', locals: { rank_number: {rank: 1} } %>
       </li>
       <li>
-        <% if @posts.find_by(rank: 3) %>
-          <figure><%= link_to(image_tag(Post.find_by(rank: 3).image.url), post_path(Post.find_by(rank: 3))) %></figure>
-          <div class="people3-title">
-            <h4><%= link_to(Post.find_by(rank: 3).title, post_path(Post.find_by(rank: 3))) %></h4>
-          </div>
-        <% end %>
+        <%= render partial: 'people3_path', locals: { rank_number: {rank: 3} } %>
       </li>
     </ul>
   </section>
