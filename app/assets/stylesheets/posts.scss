@@ -19,6 +19,7 @@
 
 .comments-count {
   display: table-cell;
+  width: 32px;
   background-color: black;
   text-align: center;
   padding: 0px 10px;
@@ -72,13 +73,14 @@
   font-size: 40px;
 }
 
-#show-image img {
-  width: 100%;
-  height: auto;
-}
-
 #show-image {
   text-align: center;
+  img {
+    width: 100%;
+    height: auto;
+    min-height: 680px;
+    background-color: #f2dec9;
+  }
 }
 
 #new-post {

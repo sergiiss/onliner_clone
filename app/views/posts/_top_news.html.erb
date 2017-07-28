@@ -5,7 +5,7 @@
         <div class="categorie-main-page"><%= main_post.categorie %></div>
         <div class="comments-count"><%= main_post.comments.count %></div>
       </div>
-      <p><%= main_post.title %></p>
+      <p><%= truncate(main_post.title, length: 105) %></p>
     <% end %>
   </div>
 <% end %>
