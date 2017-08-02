@@ -39,7 +39,7 @@
         <div class="green-part", style="background-image: url(<%= @minor_posts[index].image.url %>); background-size: cover;">
           <%= link_to(post_path(@minor_posts[index]), class: "link-text-green") do %>
             <p>
-              <%= post_title_for_visual(@minor_posts, index) %>
+              <%= truncate(@minor_posts[index].title, length: 72) %>
             </p>
           <% end %>
         </div>
@@ -99,7 +99,7 @@
       <div class="green-bottom">
         <div class="green-part", style="background-image: url(<%= @secondary_posts[index].image.url %>); background-size: cover;">
           <%= link_to(post_path(@secondary_posts[index]), class: "link-text-green") do %>
-            <p><%= post_title_for_visual(@secondary_posts, index) %></p>
+            <p><%= truncate(@secondary_posts[index].title, length: 74) %></p>
           <% end %>
         </div>
       </div>
