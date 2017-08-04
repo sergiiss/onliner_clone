@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif !important;
-  font-size: 16px;
+  font-size: 18px;
   background: linear-gradient(to bottom, #f7f7f7, #efefef, #eaeaea, #e3e3e3, #d4d4d4);
   background-repeat: repeat-x;
   background-size: 100% 100%;
@@ -102,11 +102,16 @@ body {
   font-size: 1.1em !important;
   text-decoration: none !important;
   color: black !important;
-  line-height: 45px;
+  line-height: 60px;
 }
 
 .dropdown-menu {
   line-height: 20px;
+  top: 100%;
+  left: -215px !important;
+  .dropdown-item {
+    font-weight: bold;
+  }
 }
 
 .dropdown.show {
@@ -133,11 +138,21 @@ a:hover {
 .table-cell {
   display: table-cell;
   input {
+    font-size: 1.7em;
     height: 50px;
     width: 602px;
   }
   textarea {
     min-height: 200px;
+    width: 602px;
+  }
+}
+
+.download-image {
+  display: table-cell;
+  input {
+    font-size: 1.3em;
+    height: 50px;
     width: 602px;
   }
 }
