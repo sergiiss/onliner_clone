@@ -1,6 +1,9 @@
 class Post < ApplicationRecord
   has_many :comments
 
+  belongs_to :category, optional: true
+  accepts_nested_attributes_for :category
+
   validates :title, presence: true
 
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" },

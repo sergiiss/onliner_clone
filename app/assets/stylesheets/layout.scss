@@ -25,12 +25,15 @@ body {
   background-color: #fd2;
   display: inline-block;
   height: 44px;
+
   span:first-child {
     padding-left: 20px;
   }
+
   span:last-child {
     padding-right: 20px;
   }
+
   span {
     background-color: inherit;
     font-weight: 500;
@@ -60,6 +63,7 @@ body {
   padding-left: 20px;
   height: 110px;
   width: 200px;
+
   a {
     margin-top: -5px;
     position: absolute;
@@ -78,6 +82,7 @@ body {
 
 .search-inside {
   line-height: 110px;
+
   input {
   width: 100%;
   height: 40px;
@@ -137,10 +142,12 @@ a:hover {
 
 .table-cell {
   display: table-cell;
+
   input {
     height: 50px;
     width: 602px;
   }
+
   textarea {
     min-height: 200px;
     width: 602px;
@@ -149,6 +156,7 @@ a:hover {
 
 .download-image {
   display: table-cell;
+
   input {
     font-size: 1.3em;
     height: 50px;
@@ -192,6 +200,7 @@ ul.rank2 li {
   height: 449px;
   display: inline-block;
   text-align: left;
+
   img {
   height: 449px;
   width: auto;
@@ -215,6 +224,7 @@ ul.rank3 li {
   height: 264px;
   display: inline-block;
   text-align: left;
+
   img {
   height: 265px;
   width: auto;
@@ -242,6 +252,7 @@ ul.rank3 li.helper {
   font-size: 0.8em;
   background-color: #3e4753;
   color: white;
+
   span {
     padding-right: 10px;
   }
