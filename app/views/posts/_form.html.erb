@@ -11,28 +11,13 @@
       <span class="table-cell"><%= f.select :rank, (1..4) %></span>
     </div>
 
-    <!-- <div class="table-row">
+    <div class="table-row">
       <span class="table-cell name"><%= f.label 'Выбрать категорию' %></span>
-      <span class="table-cell"><%= f.select :categorie, options_for_select(Post.all.collect { |m| m.categorie }.uniq, '') %></span>
-      <%= change_categorie = params[:categorie] %>
-    </div> -->
+      <span class="table-cell">
+        <%= f.select :category_id, options_for_select(Category.all.collect { |m| [m.name, m.id] }) %>
+      </span>
+    </div>
 
-    <%= f.fields_for(:categories) do |u| %>
-       <div class="table-row">
-         <span class="table-cell name"><%= u.label 'Создать категорию' %></span>
-         <span class="table-cell"><%= u.text_field :categorie %></span>
-       </div>
-     <% end %>
-
-    <!-- <div class="table-row">
-      <span class="table-cell name"><%= f.label 'Создать категорию' %></span>
-      <span class="table-cell"><%= f.text_field :categorie %></span>
-    </div> -->
-<!--
-    <% if change_categorie != nil %>
-      <%= f.hidden_field :categorie, :value => change_categorie %>
-    <% end %>
- -->
     <div class="table-row">
       <span class="table-cell name"><%= f.label 'Фото статьи' %></span>
       <span class="table-cell"><%= f.file_field :image %></span>
