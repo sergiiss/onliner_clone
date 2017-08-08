@@ -1,8 +1,6 @@
 class Post < ApplicationRecord
   has_many :comments
-
-  belongs_to :category, optional: true
-  accepts_nested_attributes_for :category
+  belongs_to :category
 
   validates :title, presence: true
 
