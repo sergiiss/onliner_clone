@@ -2,7 +2,7 @@
   <div class="<%= post_class %>", style="background-image: url(<%= main_post.image.url %>); background-size: cover;">
     <%= link_to(post_path(main_post), class: "link-text link-text-top") do %>
       <div class="news-info">
-        <div class="categorie-main-page"><%= main_post.categorie %></div>
+        <div class="categorie-main-page"><%= Category.find_by(id: main_post.category_id).name if main_post.category_id %></div>
         <div class="comments-count"><%= main_post.comments.count %></div>
       </div>
       <p><%= truncate(main_post.title, length: 105) %></p>

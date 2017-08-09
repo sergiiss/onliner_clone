@@ -17,12 +17,6 @@ Rails.application.routes.draw do
 
   get '/list', to: "posts#list", as: "list"
 
-  get '/people', to: "posts#people", as: "people"
-  get '/technologies', to: "posts#technologies", as: "technologies"
-  get '/opinions', to: "posts#opinions", as: "opinions"
-  get '/auto', to: "posts#auto", as: "auto"
-  get '/realty', to: "posts#realty", as: "realty"
-
   resources :comments do
     resources :likes
   end

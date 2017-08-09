@@ -1,0 +1,14 @@
+<div class="categories">
+  <%= render partial: "category_menu", locals: { categories: @category.id } %>
+</div>
+<div class="categories-people">
+  <% Post.all.where(category_id: categories).each do |post| %>
+    <div class="people-block">
+      <%= link_to((image_tag post.image.url(:medium)), post_path(post)) %>
+
+      <h3><%= link_to post.title, post_path(post) %></h3>
+
+      <div class="people-block-summary"><%= link_to post.summary, post_path(post) %></div>
+    </div>
+  <% end %>
+</div>

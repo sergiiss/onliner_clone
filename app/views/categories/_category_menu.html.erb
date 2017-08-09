@@ -1,0 +1,7 @@
+<% Category.all.collect do |m| %>
+  <% if m.id == categories %>
+    <div class="categories-menu active-categorie"><%= link_to "#{m.name}", category_path(m.id) %></div>
+  <% else %>
+    <div class="categories-menu"><%= link_to "#{m.name}", category_path(m.id) %></div>
+  <% end %>
+<% end %>
