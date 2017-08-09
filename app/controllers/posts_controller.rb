@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user, only: [ :index, :show, :people, :technologies, :opinions, :auto, :realty ]
+  skip_before_action :authenticate_user, only: [ :index, :show ]
 
-  before_action :authorize_admin, except: [ :index, :show, :people, :technologies, :opinions, :auto, :realty  ]
+  before_action :authorize_admin, except: [ :index, :show ]
 
   def index
     @main_posts = Post.where(rank: 1).limit(9).order(created_at: :desc)
@@ -76,6 +76,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :summary, :image, :rank, :categorie, :category_id)
+    params.require(:post).permit(:title, :body, :summary, :image, :rank, :category_id)
   end
 end

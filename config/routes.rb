@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :users
 
-  resources :categories
+  resources :categories do
+    collection do
+      post 'change_priority'
+    end
+  end
 
   resource :sessions, only: [:new, :create ]
 
@@ -16,11 +20,11 @@ Rails.application.routes.draw do
   end
 
   get '/list', to: "posts#list", as: "list"
+  get '/priority_list', to: "categories#priority_list", as: "priority_list"
 
   resources :comments do
     resources :likes
   end
 
   root to: "posts#index"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

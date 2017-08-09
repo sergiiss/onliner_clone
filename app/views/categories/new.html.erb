@@ -1,19 +1,21 @@
-<%= form_for @category do |f| %>
-  <%= f.error_messages %>
-  <div class="table-row">
-    <span class="table-cell name"><%= f.label 'Название категории' %></span>
-    <span class="table-cell"><%= f.text_field :name, class: "font-size-title" %></span>
-  </div>
+<div class="category-new">
+  <%= form_for @category do |f| %>
+    <%= f.error_messages %>
+    <div class="table-row">
+      <span class="table-cell name"><%= f.label 'Название категории' %></span>
+      <span class="table-cell"><%= f.text_field :name, class: "font-size-title" %></span>
+    </div>
 
-  <div class="table-row">
-    <span class="table-cell name"><%= f.label 'Приоритет категории' %></span>
-    <span class="table-cell"><%= f.text_field :priority, class: "font-size-title" %></span>
-  </div>
+    <div class="table-row">
+      <span class="table-cell name"><%= f.label 'Приоритет категории' %></span>
+      <span class="table-cell">
+        <%= f.select :priority, options_for_select([1, 2, 3, 4]), class: "font-size-title" %>
+      </span>
+    </div>
 
-  <div class="table-row">
-    <span class="table-cell"></span>
-    <span class="table-cell"><%= f.submit 'Сохранить' %></span>
-  </div>
-<% end %>
-
-<%= Category.all.collect { |m| m.name } %>
+    <div class="table-row">
+      <span class="table-cell"></span>
+      <span class="table-cell"><%= f.submit 'Сохранить' %></span>
+    </div>
+  <% end %>
+</div>

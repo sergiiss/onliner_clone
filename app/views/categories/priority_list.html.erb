@@ -1,0 +1,28 @@
+<%= form_tag change_priority_categories_path do %>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="table-rank" id="list-head">Название категории</th>
+        <th>Приоритет категории</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td scope="row" id="list-title">
+            <%= category.name %>
+          </td>
+          <td>
+            <%= select_tag category.id, options_for_select([1, 2, 3, 4], category.priority) %>
+          </td>
+        </tr>
+      <% end %>
+        <tr>
+          <td></td>
+          <td>
+            <%= submit_tag 'Сохранить' %>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+<% end %>

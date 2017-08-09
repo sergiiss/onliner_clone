@@ -11,6 +11,22 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
+  def change_priority
+    params.each do |key, value|
+      if Category.find_by(:id => key)
+        category = Category.find_by(:id => key)
+
+        category.update_attributes(:priority => value)
+      end
+    end
+
+    redirect_to priority_list_path
+  end
+
+  def priority_list
+    @categories = Category.all
+  end
+
   def create
     @category = Category.new(category_params)
 
