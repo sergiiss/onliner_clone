@@ -100,7 +100,6 @@ body {
 .dropdown {
   padding-top: 30px;
   line-height: 20px;
-
 }
 
 .dropdown-toggle {
@@ -142,6 +141,7 @@ a:hover {
 
 .table-cell {
   display: table-cell;
+  font-size: 1.2em;
 
   input {
     height: 50px;
@@ -151,7 +151,19 @@ a:hover {
   textarea {
     min-height: 200px;
     width: 602px;
+    padding-left: 5px;
   }
+
+  select {
+    padding-left: 5px;
+    width: 602px;
+    height: 50px;
+    background-color: white;
+  }
+}
+
+.image-input {
+  line-height: 50px;
 }
 
 .download-image {
