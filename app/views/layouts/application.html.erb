@@ -9,22 +9,6 @@
     <link rel="icon" type="image/x-icon" href="https://gc.onliner.by//images/logo/icons/favicon.ico">
   </head>
   <body>
-
-<!-- <div id="navic">
-  <div class="men-item">
-    CEREL
-    <div class="submen">Подменю</div>
-  </div>
-  <div class="men-item">
-    МАдвдв
-    <div class="submen">Подменю</div>
-  </div>
-  <div class="men-item">
-    ыдвалвы
-    <div class="submen">Подменю</div>
-  </div>
-</div>
- -->
     <div class="top-menu">
       <div class="top-menu-inside">
         <div class="catalog">
@@ -61,20 +45,20 @@
               <% end %>
             </div>
 
-            <div class="user user-name nav-item dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
-              <div class="dropdown-menu">
-                <span class="dropdown-item nickname"><%= current_user.name %></span>
+            <div class="user user-name drop">
+              <div onclick="myFunction()" class="drop-arrow"></div>
+              <div id="myDropdown" class="dropdown-content">
+                  <%= link_to current_user.name, "#", class: "nickname" %>
                 <% if current_user && current_user.admin? %>
-                  <%= link_to 'Новая статья', new_post_path, class: "dropdown-item" %>
-                  <%= link_to 'Изменить ранг cтатьи', list_path, class: "dropdown-item" %>
-                  <%= link_to 'Создать категорию', new_category_path, class: "dropdown-item" %>
-                  <%= link_to 'Список категорий', categories_path, class: "dropdown-item" %>
-                  <%= link_to 'Изменить приоритет категории', priority_list_path, class: "dropdown-item" %>
-                  <%= link_to 'Список пользователей', users_path, class: "dropdown-item" %>
+                  <%= link_to 'Новая статья', new_post_path %>
+                  <%= link_to 'Изменить ранг cтатьи', list_path %>
+                  <%= link_to 'Создать категорию', new_category_path %>
+                  <%= link_to 'Список категорий', categories_path %>
+                  <%= link_to 'Изменить приоритет категории', priority_list_path %>
+                  <%= link_to 'Список пользователей', users_path %>
                 <% end %>
-                <div class="dropdown-divider"></div>
-                <%= link_to 'Выйти', logout_path, class: "dropdown-item" %>
+                <div class="drop-buttom"></div>
+                  <%= link_to 'Выйти', logout_path %>
               </div>
             </div>
           <% else %>

@@ -1,24 +1,17 @@
-document.getElementById('navic').onmouseover = function(event) {
-  var target = event.target;
-  if (target.className == 'men-item') {
-    var s = target.getElementsByClassName('submen');
-    closeMenu();
-    s[0].style.display = 'block';
-  }
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
 }
 
-document.onmouseover = function(event) {
-  var target = event.target;
-  console.log(event.target);
-  if (target.className != 'men-item' && target.className != 'submen') {
-    closeMenu();
-  }
-}
+window.onclick = function(event) {
+  if (!event.target.matches('.drop-arrow')) {
 
-function closeMenu() {
-  var menu = document.getElementById('navic');
-  var subm = document.getElementsByClassName('submen');
-  for (var i=0; i < subm.length; i++) {
-    subm[i].style.display = "none";
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
   }
 }
