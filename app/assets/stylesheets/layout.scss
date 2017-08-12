@@ -19,7 +19,20 @@ body {
   max-width: 1400px;
   margin-right: auto;
   margin-left: auto;
+}
 
+.page-search {
+  margin: 20px;
+
+  h4 {
+    font-weight: 600;
+    padding-bottom: 20px;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: black;
+  }
 }
 
 .catalog {
@@ -37,7 +50,7 @@ body {
 
   span {
     background-color: inherit;
-    font-weight: bolder;
+    font-weight: 600;
     font-size: 14px;
     padding-left: 30px;
     line-height: 44px;

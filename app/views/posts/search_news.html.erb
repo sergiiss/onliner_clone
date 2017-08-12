@@ -1,0 +1,12 @@
+<div class="page-search">
+  <% if @posts.any? %>
+    <% x = 1 %>
+    <h4>Найдены следующие результаты:</h4>
+    <% @posts.each do |post| %>
+      <p><%= x %>.  <%= link_to post.title, post_path(post) %></p>
+      <% x += 1 %>
+    <% end %>
+  <% else %>
+    <h3>По Вашему запросу ничего не найдено</h3>
+  <% end %>
+</div>

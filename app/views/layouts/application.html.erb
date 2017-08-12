@@ -31,7 +31,9 @@
 
         <div class="search">
           <div class="search-inside">
-            <input type="search" id="search" placeholder="Поиск в Каталоге. Например, 'паркет tarkett'" />
+            <%= form_tag search_news_path, :method => 'get' do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Поиск в Каталоге. Например, 'паркет tarkett'" %>
+            <% end %>
           </div>
         </div>
 

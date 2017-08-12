@@ -10,6 +10,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def search_news
+    @posts = Post.search(params[:search])
+  end
+
   def new
     @post = Post.new
   end

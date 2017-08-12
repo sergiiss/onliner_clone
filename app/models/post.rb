@@ -23,6 +23,12 @@ class Post < ApplicationRecord
     end
   end
 
+  def self.search(search)
+    if search
+      Post.where("title ILIKE ? OR summary ILIKE ? OR body ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+    end
+  end
+
   private
 
   def get_comments_with_max_likes
