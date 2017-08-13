@@ -1,12 +1,18 @@
 body {
   font-family: 'Open Sans', Arial, Helvetica, Verdana, sans-serif !important;
-  font-size: 18px;
+  font-size: 14px;
   background: linear-gradient(to bottom, #fcfcfc, #efefef, #eaeaea, #e3e3e3, #d4d4d4);
   background-repeat: repeat-x;
   background-size: 100% 100%;
   padding: 0px;
   margin: 0px;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased !important;
+  figure {
+    -webkit-margin-start: 0px !important;
+    -webkit-margin-end: 0px !important;
+    -webkit-margin-before: 0px !important;
+    -webkit-margin-after: 0px !important;
+  }
 }
 
 .top-menu {
@@ -51,9 +57,9 @@ body {
   span {
     background-color: inherit;
     font-weight: 600;
-    font-size: 14px;
     padding-left: 30px;
     line-height: 44px;
+    color: #000;
   }
 }
 
@@ -79,9 +85,12 @@ body {
   width: 200px;
 
   a {
-    margin-top: -5px;
-    position: absolute;
     width: 180px;
+    height: inherit;
+  }
+  img {
+    margin-top: -5px;
+    vertical-align: middle;
   }
 }
 
@@ -127,6 +136,8 @@ a:hover {
   font-size: 1.2em;
 
   input {
+    font-size: 24px;
+    margin-top: 2px;
     height: 50px;
     width: 602px;
   }
@@ -180,8 +191,12 @@ a:hover {
 }
 
 .btn-primary {
-  margin-top: 4px;
-  background-color: red;
+  color: white;
+  font-weight: 600;
+  margin-top: 2px;
+  width: 605px !important;
+  background: linear-gradient(to bottom, #4e8403, #84b92a 100%);
+  cursor: pointer;
 }
 
 ul.rank2 {

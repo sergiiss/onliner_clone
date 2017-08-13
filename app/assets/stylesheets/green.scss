@@ -1,0 +1,41 @@
+.green {
+  height: 100px;
+}
+
+.green-bottom {
+  float: left;
+  height: inherit;
+  width: 20%;
+}
+
+.green-part {
+  margin-right: 1px;
+  height: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: #e0efd0;
+}
+
+.green-bottom:last-child .green-part {
+  margin-right: 0px;
+}
+
+.link-text-green {
+  font-size: 15px;
+  text-decoration: none !important;
+  text-shadow: 1px 2px 0px rgba(0,0,0,0.3);
+  width: 100%;
+  height: inherit;
+  display: table;
+
+  p {
+    display: table-cell;
+    overflow: hidden;
+    vertical-align: bottom;
+    color: white;
+    padding: 20px 20px 15px 20px;
+    font-weight: bolder;
+    line-height: 1 !important;
+    margin-bottom: 0px;
+  }
+}

@@ -9,21 +9,40 @@
   text-align: left;
 }
 
-.input-button {
-  padding-right: 20px;
+.u-button {
+  min-width: 60px;
+  height: 110px;
+}
+
+.button-for-input {
+  margin-right: 20px;
+  width: 135px;
+  height: 40px;
+  padding: 1px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  position: relative;
+  top: 30%;
+  a {
+    line-height: 40px;
+    color: #ccc !important;
+    font-size: 16px;
+    text-align: center;
+    color:#41423c;
+    text-decoration:none;
+    display:block;
+    position:relative;
+  }
 }
 
 .user {
   display: inline-block;
   padding-right: 10px;
   img {
+    vertical-align: middle;
     border-radius: 60px;
   }
-}
-
-.user-name {
-  float: right;
-  min-width: 60px;
 }
 
 .user-with-avatar {
@@ -75,6 +94,8 @@
 }
 
 .input-selection {
+  border: 1px solid #f1f1f1;
+  border-radius: 6px;
   background-color: #f1f1f1;
   padding: 5px 20px;
 }
