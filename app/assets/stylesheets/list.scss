@@ -1,0 +1,17 @@
+#list-title {
+  padding-left: 12px;
+}
+
+#list-head {
+  width: 95%;
+  text-align: left;
+}
+
+.table td, th {
+  padding: 12px 12px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.table td:hover, td:hover + td {
+  background-color: #f1f1f1;
+}

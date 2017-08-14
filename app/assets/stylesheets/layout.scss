@@ -136,7 +136,7 @@ a:hover {
   font-size: 1.2em;
 
   input {
-    font-size: 24px;
+    font-size: 30px;
     margin-top: 2px;
     height: 50px;
     width: 602px;
@@ -247,14 +247,6 @@ ul.rank3 li.helper {
   visibility: hidden;
 }
 
-.table-rank {
-  width: 89%;
-}
-
-.table td, th {
-  padding: 12px 0px !important;
-}
-
 .footer {
   height: 82px;
   margin-top: 15px;
@@ -266,12 +258,4 @@ ul.rank3 li.helper {
   span {
     padding-right: 10px;
   }
-}
-
-#list-title {
-  padding-left: 20px !important;
-}
-
-#list-head {
-  padding-left: 20px !important;
 }
