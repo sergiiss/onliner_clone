@@ -1,10 +1,18 @@
-#list-title {
-  padding-left: 12px;
+.list-first-column {
+  width: 88%;
+  text-align: left;
 }
 
-#list-head {
-  width: 95%;
-  text-align: left;
+.list-second-column {
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+
+  input {
+    margin: 0px auto;
+  }
 }
 
 .table td, th {

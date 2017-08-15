@@ -102,10 +102,8 @@ body {
   padding-left: 74px;
 }
 
-.search-inside {
-
-  input {
-  width: 100%;
+.search-inside input {
+  width: 90%;
   height: 40px;
   padding-left: 40px;
   outline-offset: -2px;
@@ -115,7 +113,6 @@ body {
   background-image: url('i-search.svg');
   background-repeat: no-repeat;
   background-position: 12px 50%;
-  }
 }
 
 a {
@@ -125,35 +122,6 @@ a {
 
 a:hover {
   color: #777777;
-}
-
-.table-row {
-  display: table-row;
-}
-
-.table-cell {
-  display: table-cell;
-  font-size: 1.2em;
-
-  input {
-    font-size: 30px;
-    margin-top: 2px;
-    height: 50px;
-    width: 602px;
-  }
-
-  textarea {
-    min-height: 200px;
-    width: 602px;
-    padding-left: 5px;
-  }
-
-  select {
-    padding-left: 5px;
-    width: 602px;
-    height: 50px;
-    background-color: white;
-  }
 }
 
 .image-input {
@@ -168,22 +136,6 @@ a:hover {
     height: 50px;
     width: 602px;
   }
-}
-
-.table-cell-text {
-  display: table-cell;
-
-  textarea {
-    min-height: 600px;
-    width: 602px;
-  }
-}
-
-.table-cell.name {
-  vertical-align: top;
-  width: 100px;
-  font-weight: bolder;
-  font-size: 0.9em;
 }
 
 .nav-link {

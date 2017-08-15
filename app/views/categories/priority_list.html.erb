@@ -1,18 +1,18 @@
 <%= form_tag change_priority_categories_path do %>
-  <table class="table table-hover">
+  <table class="table">
     <thead>
       <tr>
-        <th class="table-rank" id="list-head">Название категории</th>
-        <th>Приоритет категории</th>
+        <th class="list-first-column">Название категории</th>
+        <th class="list-second-column">Приоритет категории</th>
       </tr>
     </thead>
     <tbody>
       <% @categories.each do |category| %>
         <tr>
-          <td scope="row" id="list-title">
+          <td scope="row" class="list-first-column">
             <%= category.name %>
           </td>
-          <td>
+          <td class="list-second-column">
             <%= select_tag category.id, options_for_select([1, 2, 3, 4], category.priority) %>
           </td>
         </tr>
@@ -20,7 +20,7 @@
         <tr>
           <td></td>
           <td>
-            <%= submit_tag 'Сохранить' %>
+            <%= submit_tag 'Сохранить', class: "button-exp" %>
           </td>
         </tr>
     </tbody>

@@ -1,0 +1,45 @@
+.table-row {
+  display: table-row;
+}
+
+.table-cell.name {
+  vertical-align: top;
+  width: 100px;
+  font-weight: bolder;
+}
+
+.table-cell {
+  input {
+    font-size: 1.4em;
+    padding: 0px;
+    height: 40px;
+    width: 598px;
+  }
+
+  select {
+    font-size: 1.3em;
+    margin-top: 4px;
+    width: 602px;
+    height: 40px;
+    background-color: white;
+  }
+}
+
+.table-cell, .table-cell-text {
+  display: table-cell;
+
+  textarea {
+    padding: 0px;
+    min-height: 200px;
+    width: 602px;
+  }
+}
+
+.button-new-post {
+  width: 604px !important;
+}
+
+.button-new-post2 {
+  width: 602px !important;
+  margin-top: 4px;
+}

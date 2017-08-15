@@ -30,7 +30,9 @@
 
 .categories {
   width: 100%;
+  height: 29px;
   border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
   padding: 10px 0px;
 }
 
@@ -51,6 +53,7 @@
   height: 30px;
   float: left;
   padding: 0px 20px;
+
   a {
     display: block;
     height: inherit;
@@ -94,11 +97,6 @@
 
 .save-form-post {
   padding: 20px 0px 20px 0px;
-}
-
-.font-size-title{
-  font-size: 1.2em;
-  padding-left: 5px;
 }
 
 .name {
