@@ -8,10 +8,7 @@ body {
   margin: 0px;
   -webkit-font-smoothing: antialiased !important;
   figure {
-    -webkit-margin-start: 0px !important;
-    -webkit-margin-end: 0px !important;
-    -webkit-margin-before: 0px !important;
-    -webkit-margin-after: 0px !important;
+    margin: 0px;
   }
 }
 
@@ -70,49 +67,6 @@ body {
   margin-right: auto;
   background-color: white;
   min-width: 1024px;
-}
-
-.top-bar {
-  height: 110px;
-  background-color: #fafafa;
-  line-height: 110px;
-}
-
-.logo {
-  float: left;
-  padding-left: 20px;
-  height: 110px;
-  width: 200px;
-
-  a {
-    width: 180px;
-    height: inherit;
-  }
-  img {
-    margin-top: -5px;
-    vertical-align: middle;
-  }
-}
-
-.search {
-  width: 61.4%;
-  height: 110px;
-  min-width: 400px;
-  float: left;
-  padding-left: 74px;
-}
-
-.search-inside input {
-  width: 90%;
-  height: 40px;
-  padding-left: 40px;
-  outline-offset: -2px;
-  font-size: 14px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background-image: url('i-search.svg');
-  background-repeat: no-repeat;
-  background-position: 12px 50%;
 }
 
 a {

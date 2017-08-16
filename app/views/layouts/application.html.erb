@@ -26,20 +26,20 @@
     <div class="page">
       <div class="top-bar">
         <div class="logo">
-          <%= link_to((image_tag "https://gc.onliner.by/images/logo/onliner_logo.v3.png?token=1498651481", size: '180x40'), posts_path) %>
+          <%= link_to((image_tag "https://gc.onliner.by/images/logo/onliner_logo.v3.png?token=1498651481"), posts_path) %>
         </div>
 
         <div class="search">
-          <div class="search-inside">
+          <div class="search-inner">
             <%= form_tag search_news_path, :method => 'get' do %>
               <%= text_field_tag :search, params[:search], placeholder: "Поиск в Каталоге. Например, 'паркет tarkett'" %>
             <% end %>
           </div>
         </div>
 
-        <div class="input">
+        <div class="input-user">
           <% if current_user %>
-            <div class="user avatar">
+            <div class="user">
               <% if current_user.avatar %>
                 <%= link_to((image_tag "/avatars/#{current_user.id}/#{ current_user.avatar }", size: '60x60', class: "user-with-avatar"), user_path(current_user.id)) %>
               <% else %>
@@ -47,7 +47,7 @@
               <% end %>
             </div>
 
-            <div class="user user-name drop">
+            <div class="user drop">
               <div onclick="myFunction()" class="drop-arrow"></div>
               <div id="myDropdown" class="dropdown-content">
                   <%= link_to current_user.name, "#", class: "nickname" %>

@@ -3,38 +3,6 @@
   width: 400px;
 }
 
-.input {
-  float: left;
-  height: 70px;
-  text-align: left;
-}
-
-.u-button {
-  min-width: 60px;
-  height: 110px;
-}
-
-.button-for-input {
-  width: 135px;
-  height: 40px;
-  padding: 1px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: white;
-  position: relative;
-  top: 30%;
-  a {
-    line-height: 40px;
-    color: #ccc !important;
-    font-size: 16px;
-    text-align: center;
-    color:#41423c;
-    text-decoration:none;
-    display:block;
-    position:relative;
-  }
-}
-
 .user {
   display: inline-block;
   padding-right: 10px;
@@ -46,21 +14,6 @@
 
 .user-with-avatar {
   box-shadow: 0 0 0 1px white, 0 0 10px #333;
-}
-
-.avatar {
-  margin-right: 20px;
-}
-
-.btn-outline-secondary {
-  padding-left: 45px !important;
-  padding-right: 45px !important;
-  background-color: white !important;
-  height: 40px !important;
-}
-
-.btn-outline-secondary:hover {
-  color: gray !important;
 }
 
 .show-user {
