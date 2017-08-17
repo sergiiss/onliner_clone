@@ -21,7 +21,6 @@
 }
 
 .link-text-green {
-  font-size: 15px;
   text-decoration: none !important;
   text-shadow: 1px 2px 0px rgba(0,0,0,0.3);
   width: 100%;
@@ -30,6 +29,8 @@
 
   p {
     display: table-cell;
+    font-family: Open Sans Condensed;
+    font-size: 15px;
     overflow: hidden;
     vertical-align: bottom;
     color: white;

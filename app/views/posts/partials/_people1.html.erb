@@ -1,0 +1,16 @@
+<section class="people1">
+  <% if collection.find_by(rank_number) %>
+    <figure>
+      <%= link_to(image_tag(collection.find_by(rank_number).image.url), post_path(collection.find_by(rank_number)))  %>
+    </figure>
+    <article>
+      <div class="people1-title">
+        <div class="people1-group">СОЦИУМ</div>
+        <h3>
+          <%= link_to(collection.find_by(rank_number).title, post_path(collection.find_by(rank_number))) %>
+        </h3>
+      </div>
+      <div class="people1-summary"><%= collection.find_by(rank_number).summary %></div>
+    </article>
+  <% end %>
+</section>

@@ -10,7 +10,7 @@
       <% @categories.each do |category| %>
         <tr>
           <td scope="row" class="list-first-column">
-            <%= category.name %>
+            <%= link_to(category.name, edit_category_path(category)) %>
           </td>
           <td class="list-second-column">
             <%= select_tag category.id, options_for_select([1, 2, 3, 4], category.priority) %>

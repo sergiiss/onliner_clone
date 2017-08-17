@@ -1,0 +1,9 @@
+<section class="people2">
+  <% if @category_one.find_by(rank_number) %>
+    <figure><%= link_to(image_tag(collection.find_by(rank_number).image.url), post_path(collection.find_by(rank_number))) %></figure>
+    <article>
+      <h4 id="people2-title"><%= link_to(collection.find_by(rank_number).title, post_path(collection.find_by(rank_number))) %></h4>
+      <div class="people2-summary"><%= collection.find_by(rank_number).summary %></div>
+    </article>
+  <% end %>
+</section>

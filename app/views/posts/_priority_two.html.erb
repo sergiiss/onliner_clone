@@ -1,0 +1,59 @@
+<h1 class="title-posts">АВТО</h1>
+
+<div class="green">
+  <% index = 0 %>
+  <% while index < 5 do %>
+    <% if @secondary_posts[index] %>
+      <div class="green-bottom">
+        <div class="green-part", style="background-image: url(<%= @secondary_posts[index].image.url %>); background-size: cover;">
+          <%= link_to(post_path(@secondary_posts[index]), class: "link-text-green") do %>
+            <p><%= truncate(@secondary_posts[index].title, length: 74) %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <% index += 1 %>
+  <% end %>
+</div>
+
+<div class="people">
+
+  <section class="people2">
+    <% if @posts.find_by(rank: 4) %>
+      <figure><%= link_to(image_tag(Post.find_by(rank: 4).image.url), post_path(Post.find_by(rank: 4))) %></figure>
+      <article>
+        <h4 id="people2-title"><%= link_to(Post.find_by(rank: 4).title, post_path(Post.find_by(rank: 4))) %></h4>
+        <div class="people2-summary"><%= Post.find_by(rank: 4).summary %></div>
+      </article>
+    <% end %>
+  </section>
+
+  <section class="people1">
+    <% if @posts.find_by(rank: 1) %>
+      <figure><%= link_to(image_tag(Post.find_by(rank: 1).image.url), post_path(Post.find_by(rank: 1))) %></figure>
+      <article>
+        <div class="people1-title">
+          <div class="people1-group">СОЦИУМ</div>
+          <h3><%= link_to(Post.find_by(rank: 1).title, post_path(Post.find_by(rank: 1))) %></h3>
+        </div>
+        <div class="people1-summary"><%= Post.find_by(rank: 1).summary %></div>
+      </article>
+    <% end %>
+  </section>
+
+  <section class="people3">
+    <ul>
+      <li>
+       <%= render partial: 'people3_path', locals: { rank_number: {rank: 4} } %>
+      </li>
+      <li>
+        <%= render partial: 'people3_path', locals: { rank_number: {rank: 1} } %>
+      </li>
+      <li>
+        <%= render partial: 'people3_path', locals: { rank_number: {rank: 3} } %>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<div class="line"></div>

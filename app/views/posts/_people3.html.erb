@@ -1,0 +1,12 @@
+<section class="people3">
+  <ul>
+    <% index2 = 0 %>
+    <% while index2 < 3 do %>
+      <li>
+        <%= render partial: 'people3_path', locals: { rank_number: rank_number_two } %>
+      </li>
+
+      <% index2 += 1 %>
+    <% end %>
+  </ul>
+</section>
