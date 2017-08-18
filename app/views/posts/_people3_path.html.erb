@@ -1,10 +1,10 @@
-<% if @category_one.find_by(rank_number) %>
+<% if collection.find_by(rank_number) %>
   <figure>
-    <%= link_to(image_tag(@category_one.find_by(rank_number).image.url), post_path(@category_one.find_by(rank_number))) %>
+    <%= link_to(image_tag(collection.find_by(rank_number).image.url), post_path(collection.find_by(rank_number))) %>
   </figure>
   <div class="people3-title">
     <h4>
-      <%= link_to(@category_one.find_by(rank_number).title, post_path(@category_one.find_by(rank_number))) %>
+      <%= link_to(collection.find_by(rank_number).title, post_path(collection.find_by(rank_number))) %>
     </h4>
   </div>
 <% end %>

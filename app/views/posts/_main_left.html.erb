@@ -1,0 +1,41 @@
+<h1 class="title-posts"><%= Category.find_by(id: id_category).name %></h1>
+
+<div class="green">
+  <% index = 0 %>
+  <% while index < 5 do %>
+    <% if category_collection[index] %>
+      <div class="green-bottom">
+        <div class="green-part", style="background-image: url(<%= category_collection[index].image.url %>); background-size: cover;">
+          <%= link_to(post_path(category_collection[index]), class: "link-text-green") do %>
+            <p>
+              <%= truncate(category_collection[index].title, length: 72) %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <% index += 1 %>
+  <% end %>
+</div>
+
+<div class="people">
+  <%= render partial: 'posts/partials/people1', locals: { rank_number: {rank: 1}, collection: category_collection } %>
+
+  <%= render partial: 'posts/partials/people2', locals: { rank_number: {rank: 2}, collection: category_collection } %>
+
+  <section class="people3">
+    <ul>
+      <li>
+       <%= render partial: 'people3_path', locals: { rank_number: {rank: 2}, collection: category_collection } %>
+      </li>
+      <li>
+        <%= render partial: 'people3_path', locals: { rank_number: {rank: 1}, collection: category_collection } %>
+      </li>
+      <li>
+        <%= render partial: 'people3_path', locals: { rank_number: {rank: 3}, collection: category_collection } %>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<div class="line"></div>

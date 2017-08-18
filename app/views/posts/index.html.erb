@@ -29,6 +29,6 @@
   </div>
 </div>
 
-<%= render "priority_one" %>
+<%= render partial: 'main_left', locals: { category_collection: @category_one, id_category: 1 } %>
 
-<%= render "priority_two" %>
+<%= render partial: 'main_center', locals: { category_collection: @category_two, id_category: 3 } %>
