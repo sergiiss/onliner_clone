@@ -4,8 +4,6 @@ class PostsController < ApplicationController
   before_action :authorize_admin, except: [ :index, :show ]
 
   def index
-    @category_one = Post.where(category_id: 1).limit(10).order(created_at: :desc)
-    @category_two = Post.where(category_id: 3).limit(10).order(created_at: :desc)
     @main_posts = Post.where(rank: 1).limit(9).order(created_at: :desc)
     @secondary_posts = Post.where(rank: 2).limit(5).order(created_at: :desc)
     @minor_posts = Post.where(rank: 4).limit(5).order(created_at: :desc)

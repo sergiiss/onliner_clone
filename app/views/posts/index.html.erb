@@ -29,6 +29,10 @@
   </div>
 </div>
 
-<%= render partial: 'main_left', locals: { category_collection: @category_one, id_category: 1 } %>
+<%= render partial: 'main_left', locals: { id_category: 1 } %>
 
-<%= render partial: 'main_center', locals: { category_collection: @category_two, id_category: 3 } %>
+<%= render partial: 'main_center', locals: { id_category: 3 } %>
+
+<%= render partial: 'main_left', locals: { id_category: 2 } %>
+
+<%= render partial: 'main_center', locals: { id_category: 5 } %>

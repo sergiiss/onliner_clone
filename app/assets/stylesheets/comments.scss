@@ -8,6 +8,7 @@
 }
 
 #discussion h1 {
+  font-family: Open Sans Condensed;
   margin: 40px 0px 24px 0px;
   font-size: 30px;
   font-weight: 700;
@@ -16,6 +17,7 @@
 
 .actions {
   font-size: 10px !important;
+
   a {
   color: red;
   }
@@ -56,6 +58,7 @@
   vertical-align: top;
   width: 80px;
   height: auto;
+
   img {
     width: 60px;
     height: 60px;
@@ -67,17 +70,19 @@
 .save-text-comment {
   width: 88%;
   display: inline-block;
+
   textarea {
-    width: 700px;
+    font-family: Open Sans;
+    font-size: 15px;
+    width: 660px;
     height: 60px;
+    border-radius: 4px;
+    padding: 20px;
   }
+
   a {
     color: #004d99;
   }
-}
-
-.button-form {
-  margin-top: 20px;
 }
 
 #date_comment {

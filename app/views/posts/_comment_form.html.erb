@@ -14,7 +14,7 @@
         <span>
           <%= f.text_area :body, class: "form-control", id: "exampleSelect2", :placeholder => "#{current_user.name.capitalize}, прокомментируйте эту статью..."  %>
         </span>
-        <div class="button-form"><%= f.submit 'Высказаться', class: "btn btn-success" %></div>
+        <div><%= f.submit 'Высказаться', class: "button-exp" %></div>
       </div>
     <% end %>
   <% else %>

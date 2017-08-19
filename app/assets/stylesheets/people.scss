@@ -34,6 +34,10 @@
     height: 260px;
     background-color: #b5ccf2;
   }
+
+  article {
+    padding-top: 20px;
+  }
 }
 
 .people1-title {
@@ -46,6 +50,7 @@
     font-weight: 700;
     font-size: 25px;
     line-height: 1.2;
+    margin: 0px;
   }
 
   a {
@@ -92,6 +97,7 @@
   font-weight: 700;
   font-family: Open Sans Condensed;
   font-size: 21px;
+  margin: 10px 0px;
 }
 
 .people2-summary {
