@@ -14,6 +14,13 @@
     </div>
 
     <div class="table-row">
+      <span class="table-cell name"><%= f.label 'отображать категорию?' %></span>
+      <span class="table-cell">
+        <%= f.select :main_page, options_for_select(['true', 'false']) %>
+      </span>
+    </div>
+
+    <div class="table-row">
       <span class="table-cell"></span>
       <span class="table-cell"><%= f.submit 'Сохранить', class: "button-new-post2" %></span>
     </div>

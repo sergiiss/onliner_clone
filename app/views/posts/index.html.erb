@@ -29,10 +29,14 @@
   </div>
 </div>
 
-<%= render partial: 'main_left', locals: { id_category: 1 } %>
+<% foo = 1 %>
 
-<%= render partial: 'main_center', locals: { id_category: 3 } %>
+<% @main_categories.each do |category| %>
+  <% if foo.odd? %>
+    <%= render partial: 'main_left', locals: { id_category: category.id } %>
+  <% elsif foo.even? %>
+    <%= render partial: 'main_center', locals: { id_category: category.id } %>
+  <% end %>
 
-<%= render partial: 'main_left', locals: { id_category: 2 } %>
-
-<%= render partial: 'main_center', locals: { id_category: 5 } %>
+  <% foo += 1 %>
+<% end %>
