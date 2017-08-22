@@ -10,7 +10,7 @@
       <% @posts.each do |post| %>
         <tr>
           <td scope="row" class="list-first-column">
-            <%= post.title %>
+            <%= link_to post.title, post_path(post) %>
           </td>
           <td class="list-second-column">
             <%= select_tag post.id, options_for_select([1, 2, 3, 4], post.rank) %>
