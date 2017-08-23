@@ -51,3 +51,17 @@
   background-color: #f1f1f1;
   padding: 5px 20px;
 }
+
+.list_users {
+  margin: 20px;
+
+  table tbody td {
+    padding: 10px 10px 10px 0px;
+    line-height: 20px;
+  }
+
+  table thead tr th {
+    padding: 12px 0px;
+    text-align: left;
+  }
+}
