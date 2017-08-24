@@ -16,13 +16,18 @@
     <div class="table-row">
       <span class="table-cell name"><%= f.label 'отображать категорию?' %></span>
       <span class="table-cell">
-        <%= f.select :main_page, options_for_select(['true', 'false']) %>
+        <%= f.check_box :main_page %>
       </span>
     </div>
 
     <div class="table-row">
       <span class="table-cell"></span>
       <span class="table-cell"><%= f.submit 'Сохранить', class: "button-new-post2" %></span>
+    </div>
+
+    <div class="table-row">
+      <span class="table-cell"></span>
+      <span class="actions"><%= link_to 'Удалить категорию', category_path(@category), method: :delete, data: { confirm: 'Вы уверены?'} %></span>
     </div>
   <% end %>
 </div>

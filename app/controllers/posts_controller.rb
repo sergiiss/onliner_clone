@@ -5,10 +5,7 @@ class PostsController < ApplicationController
 
   def index
     @main_categories = Category.where(main_page: 'true').order(:priority)
-    @main_posts = Post.where(rank: 1).limit(9).order(created_at: :desc)
-    @secondary_posts = Post.where(rank: 2).limit(5).order(created_at: :desc)
-    @minor_posts = Post.where(rank: 4).limit(5).order(created_at: :desc)
-    @posts = Post.all
+    @main_posts = Post.where(rank: 1, category_id: Category.where(main_page: 'true')).limit(9).order(created_at: :desc)
   end
 
   def search_news
@@ -63,7 +60,7 @@ class PostsController < ApplicationController
   end
 
   def list
-    @posts = Post.all
+    @posts = Post.all.order(:category_id)
   end
 
   def destroy

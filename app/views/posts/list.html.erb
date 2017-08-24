@@ -11,6 +11,11 @@
         <tr>
           <td scope="row" class="list-first-column">
             <%= link_to post.title, post_path(post) %>
+            <span id="list_name_category">
+              <% if Category.find_by(id: post.category_id) %>
+                <%= Category.find_by(id: post.category_id).name %>
+              <% end %>
+            </span>
           </td>
           <td class="list-second-column">
             <%= select_tag post.id, options_for_select([1, 2, 3, 4], post.rank) %>
