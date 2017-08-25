@@ -3,6 +3,7 @@
     <thead>
       <tr>
         <th class="list-first-column">Название категории</th>
+        <th class="list-second-column">Отображать категорию?</th>
         <th class="list-second-column">Приоритет категории</th>
       </tr>
     </thead>
@@ -13,7 +14,10 @@
             <%= link_to(category.name, edit_category_path(category)) %>
           </td>
           <td class="list-second-column">
-            <%= select_tag category.id, options_for_select([1, 2, 3, 4], category.priority) %>
+            <%= check_box_tag "category[#{category.id}][]", true, category.main_page %>
+          </td>
+          <td class="list-second-column">
+            <%= select_tag "category[#{category.id}][]", options_for_select([1, 2, 3, 4], category.priority) %>
           </td>
         </tr>
       <% end %>
