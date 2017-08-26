@@ -31,8 +31,8 @@ class CategoriesController < ApplicationController
     params.values.map do |foo|
       if foo.class == HashWithIndifferentAccess
         foo.to_hash.each do |key, value|
-          if Category.find_by(:id => key.to_s.to_i)
-            category = Category.find_by(:id => key.to_s.to_i)
+          if Category.find_by(:id => key.to_i)
+            category = Category.find_by(:id => key.to_i)
 
             if value.size == 1
               category.update_attributes(priority: value[0], main_page: 'false')
