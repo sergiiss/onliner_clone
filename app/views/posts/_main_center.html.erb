@@ -1,6 +1,6 @@
 <% category_collection = Post.where(category_id: id_category).limit(10).order(created_at: :desc) %>
 
-<h1 class="title-posts"><%= Category.find_by(id: id_category).name %></h1>
+<h1 class="title-posts"><%= link_to Category.find_by(id: id_category).name, category_path(id_category) %></h1>
 
 <div class="green">
   <% index = 0 %>
