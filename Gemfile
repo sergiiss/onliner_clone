@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip', "~> 5.0.0"
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'aws-sdk', '~> 2'
+gem 'dotenv-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
