@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user, only: [ :index, :show ]
+  skip_before_action :authenticate_user, only: [ :index, :show, :search_news ]
 
-  before_action :authorize_admin, except: [ :index, :show ]
+  before_action :authorize_admin, except: [ :index, :show, :search_news ]
 
   def index
     @main_categories = Category.where(main_page: 'true').order(:priority)
