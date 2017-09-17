@@ -28,11 +28,11 @@
 
     <% if current_user.present? %>
 
-      <% if comment.from?(current_user) %>
+      <% if comment.from?(current_user) %><div class="inner-like">
         <div class="like-all">
           <div class="like">
-            <%= link_to(image_tag("like.png", width: '21'), comment_like_path(comment, :id), method: :delete) %>
-            <%= comment.likes.count %>
+            <div class="inner-like"><%= link_to(image_tag("like.png"), comment_like_path(comment, :id), method: :delete) %></div>
+            <div class="inner-like"><%= comment.likes.count %></div>
           </div>
 
           <% if best_comment %>
@@ -43,8 +43,8 @@
       <% else %>
         <div class="like-all">
           <div class="like">
-            <%= link_to(image_tag("like.png", width: '21'), comment_likes_path(comment), method: :post) %>
-            <%= comment.likes.count %>
+            <div class="inner-like"><%= link_to(image_tag("like.png"), comment_likes_path(comment), method: :post) %></div>
+            <div class="inner-like"><%= comment.likes.count %></div>
           </div>
           <div class="like-botton"><%= button_to 'Лайк!', comment_likes_path(comment) %></div>
           <% if best_comment %>
@@ -56,8 +56,8 @@
 
     <% else %>
       <div class="like">
-        <%= image_tag("like.png", width: '21') %>
-        <%= comment.likes.count %>
+        <div class="inner-like"><%= image_tag("like.png") %></div>
+        <div class="inner-like"><%= comment.likes.count %></div>
       </div>
 
       <% if best_comment %>

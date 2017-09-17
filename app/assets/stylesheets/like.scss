@@ -4,6 +4,16 @@
   min-width: 43px;
   height: 27px;
   padding-left: 3px;
+
+  img {
+    width: 21px;
+  }
+}
+
+.inner-like {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 3px;
 }
 
 .like-best {
