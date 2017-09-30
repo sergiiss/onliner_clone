@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :sessions, only: [:new, :create ]
+  resource :sessions, only: [:new, :create]
 
   get '/logout', to: "sessions#destroy", as: "logout"
   get '/search_news', to: "posts#search_news", as: "search_news"

@@ -36,6 +36,7 @@ gem 'paperclip', "~> 5.0.0"
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'aws-sdk', '~> 2'
 gem 'dotenv-rails'
+gem 'bullet', group: 'development'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
