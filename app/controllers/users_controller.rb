@@ -30,11 +30,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if user?
-      @user = User.find(params[:id])
-    else
-      @user = current_user
-    end
+    @user = user? ? User.find(params[:id]) : current_user
   end
 
   def update

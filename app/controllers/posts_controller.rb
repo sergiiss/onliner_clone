@@ -19,11 +19,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
-    if @post.save
-      redirect_to @post
-    else
-      render :new
-    end
+    @post.save ? (redirect_to @post) : (render :new)
   end
 
   def change_rank
@@ -52,11 +48,7 @@ class PostsController < ApplicationController
   def update
     set_post
 
-    if @post.update_attributes(post_params)
-      redirect_to @post
-    else
-      render :edit
-    end
+    @post.update_attributes(post_params) ? (redirect_to @post) : (render :edit)
   end
 
   def list

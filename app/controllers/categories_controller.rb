@@ -20,11 +20,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
 
-    if @category.update_attributes(category_params)
-      redirect_to @category
-    else
-      render :edit
-    end
+    @category.update_attributes(category_params) ? (redirect_to @category) : (render :edit)
   end
 
   def change_priority
@@ -54,11 +50,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
 
-    if @category.save
-      redirect_to @category
-    else
-      render :new
-    end
+    @category.save ? (redirect_to @category) : (render :new)
   end
 
   def destroy
