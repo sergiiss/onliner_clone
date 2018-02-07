@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user
-    redirect_to new_sessions_path, alert: "Пожалуйста, пройдите аутентификацию" unless current_user
+    redirect_to new_sessions_path, alert: t(:authentication_failed) unless current_user
   end
 
   def current_user
